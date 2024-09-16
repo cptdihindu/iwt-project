@@ -1,3 +1,5 @@
+Finished,
+
 > Sign in, Login, Logout system functioning properply.
 > Logout button on top right navbar.
 > Logout button only displays if the user logged in.
