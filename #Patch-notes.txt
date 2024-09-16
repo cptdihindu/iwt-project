@@ -4,8 +4,11 @@
 > Logged users cannot login again until they logout.
 > Random banners displays on homepage according to the user type (guest or logged user).
 > Signin form validation working properly.
+> All users who fill the sign in form will defined as the role "customer"
+> Admins can be defined through phpmyadmin by changing their role to "admin"
+> After admin login through the default login, they have access to the admin page.
 
 Working on,
 
-> Admin logins
+> Admin Tasks
 > Ride enquiry
