@@ -4,13 +4,21 @@
     <link rel="stylesheet" href="style.css">
 
     <script>
-      function expandBox(){
-        var answer = document.getElementById("answer");
-        var button = document.getElementById("expand-btn");
+      function expandBox(button){
+        var box = button.closest('.box');
+        var answer = box.querySelector('.answer');
+        var question = box.querySelector('.question')
 
-        answer.classList.add("expanded-answer");
-        button.innerHTML = "╱╲";
-
+        if(button.innerHTML == "╲╱"){
+          answer.classList.add("expanded-answer");
+          question.classList.add("expanded-question");
+          button.innerHTML = "╱╲";
+        }
+        else{
+          answer.classList.remove("expanded-answer");
+          question.classList.remove("expanded-question");
+          button.innerHTML = "╲╱";
+        }
       }
     </script>
 
@@ -27,21 +35,22 @@ require_once('index.php');
 */
 ?>
 <div class="nav-margin"></div>
-<h1 align="center" >Help page</h1>
-<h3>Frequently asked questions</h3>
+<h1 align="center" >Frequently asked questions</h1>
 
 <div class="all-boxes">
+
   <div class="box">
-  <button type="button" id="expand-btn" class="expand-btn" onclick="expandBox()">╲╱</button>
+  <button type="button" class="expand-btn" onclick="expandBox(this)">╲╱</button>
       <div class="question">
           How do I register to NexRide taxi ?
       </div>
-      <div id="answer" class="answer">
+      <div class="answer">
           You can simply register to our WEBSITE through the "Join the Revolution Ride" icon in the Homepage. By clicking on that icon you can see a register link at the bottom .
       </div>
   </div>
 
   <div class="box">
+  <button type="button" class="expand-btn" onclick="expandBox(this)">╲╱</button>
       <div class="question">
         How to Login to NexRide?
       </div>
@@ -51,6 +60,7 @@ require_once('index.php');
   </div>
 
   <div class="box">
+  <button type="button" class="expand-btn" onclick="expandBox(this)">╲╱</button>
       <div class="question">
         How do I book a NexRide taxi ?
       </div>
@@ -62,6 +72,7 @@ require_once('index.php');
 
 
   <div class="box">
+  <button type="button" class="expand-btn" onclick="expandBox(this)">╲╱</button>
       <div class="question">
       How can I track my taxi ?
       </div>
@@ -72,6 +83,7 @@ require_once('index.php');
 
 
   <div class="box">
+  <button type="button" class="expand-btn" onclick="expandBox(this)">╲╱</button>
       <div class="question">
         How much does a ride cost ?
       </div>
@@ -82,6 +94,7 @@ require_once('index.php');
   </div>
 
   <div class="box">
+  <button type="button" class="expand-btn" onclick="expandBox(this)">╲╱</button>
       <div class="question">
         What payment options are available ?
       </div>
@@ -92,6 +105,7 @@ require_once('index.php');
 
 
   <div class="box">
+  <button type="button" class="expand-btn" onclick="expandBox(this)">╲╱</button>
       <div class="question">
         Can I cancel my booking ?
       </div>
@@ -102,6 +116,7 @@ require_once('index.php');
 
 
   <div class="box">
+  <button type="button" class="expand-btn" onclick="expandBox(this)">╲╱</button>
       <div class="question">
         Is it safe to travel with your drivers ?
       </div>
@@ -112,6 +127,7 @@ require_once('index.php');
 
 
   <div class="box">
+  <button type="button" class="expand-btn" onclick="expandBox(this)">╲╱</button>
       <div class="question">
         What should I do if my taxi is late ? 
       </div>

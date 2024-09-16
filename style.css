@@ -143,6 +143,7 @@ body{
     border-radius:20px;
     padding: 50;
     background-color: #2f2f2f;
+    box-shadow:3px 3px 15px 10px rgba(0, 0, 0, 0.284);
 }
 .subtopic{
     color: rgb(213, 213, 213);
@@ -208,7 +209,7 @@ body{
     justify-content: center;
 }
 .long-btn{
-    box-shadow:3px 3px 15px 10px rgba(0, 0, 0, 0.648);
+    box-shadow:3px 3px 15px 10px rgba(0, 0, 0, 0.284);
     height: 60;
     width: 400;
     cursor: pointer;
@@ -366,6 +367,10 @@ body{
 
 
 
+h1{
+    color: rgb(208, 208, 208);
+    margin-bottom: 75;
+}
 .all-boxes{
     width: 100%;
     display: flex;
@@ -387,17 +392,23 @@ body{
     padding: 2;
     position: absolute;
     font-size: 10;
-    font-weight: 800;
+    font-weight: 900;
     right: 10;
-    top: 10;
+    top: 12;
 }
 .question{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
     text-align: center;
     color: white;
     background-color: rgb(100, 100, 100); /* Same bg color */
     padding: 10;
+}
+.expanded-question{
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;;
 }
 .answer{
     display: none; /* ################## */

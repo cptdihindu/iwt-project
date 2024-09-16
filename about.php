@@ -28,22 +28,7 @@ The main reason for success of <b><i> NexRide </i></b> is providing good service
 "To be the most reliable and customer-focused cab service, ensuring safe,convenient, and affordable transportation for all" </h4>
 
 <h3><b><i> Our Mission </i></b></h3>
-<h4> "To Provide safe , reliable, and affordable transportation, ensuring a seamless booking experience with timely service, prioritizing customer satisfaction and driver welfare."
-
-<?php require_once('index.php') ?>
-
-
-
-
-
-
-
-
-
-
-
-
-
+<h4> "To Provide safe , reliable, and affordable transportation, ensuring a seamless booking experience with timely service, prioritizing customer satisfaction and driver welfare."</h4>
 
 <?php require_once('footer.php');?>
 </body>
