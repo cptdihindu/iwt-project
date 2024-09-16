@@ -1,0 +1,18 @@
+.navbar 20
+.navbar li:first-child 35
+.content 19
+
+.logout-btn 18
+.welcome-user 50
+.guest-banner, .user-banner 25
+.topic 28
+.content 19
+.feature-table 16
+.feature-table .hl 20
+.long-btn 20
+
+.login-popup, .sign-in-popup 20
+.login-row span 15
+.login-submit 25
+.popup-close-btn 25
+.textfield 20px

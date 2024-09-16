@@ -1,0 +1,11 @@
+> Sign in, Login, Logout system functioning properply.
+> Logout button on top right navbar.
+> Logout button only displays if the user logged in.
+> Logged users cannot login again until they logout.
+> Random banners displays on homepage according to the user type (guest or logged user).
+> Signin form validation working properly.
+
+Working on,
+
+> Admin logins
+> Ride enquiry
