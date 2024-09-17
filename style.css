@@ -421,6 +421,35 @@ h1{
 
 
 
+.admin-table{
+    margin: 0 2%;
+    color: rgb(168, 168, 168);
+    display: flex;
+    justify-content: space-around;
+    font-size: 1em;
+    min-width: 400px;
+    border-collapse: collapse;
+}
+.admin-table tr:first-child{
+    background-color: #101010;
+}
+.admin-table tr:not(:first-child):hover{
+    background-color: rgb(54, 54, 54);
+}
+.admin-table td{
+    border: 1px solid rgb(95, 95, 95);
+    padding: 5;
+}
+.admin-table .hl{
+    font-size: 20;
+    color: rgb(224, 224, 224);
+}
+.admin-table-icon{
+    width: 30px;
+}
+
+
+
 
 
 .footer{
