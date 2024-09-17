@@ -443,7 +443,7 @@ h1{
 .admin-table td{
     border: 1px solid rgb(95, 95, 95);
     word-wrap: break-word;
-    padding: 5px 10px;
+    padding: 10px;
 }
 .admin-table .hl{
     font-size: 20px;
@@ -461,10 +461,36 @@ h1{
 
 
 
-
-.update-form{
-    
+.update-form-wrapper{
+    display: flex;
+    justify-content: center;
 }
+.update-form{
+    background-color: #101010;
+    border-radius: 5px;
+    font-size: 20;
+    width: 450px;
+    border: 1px solid orange;
+    padding: 30;
+}
+.update-form-row{
+    display: flex;
+    justify-content: right;
+}
+.update-form-row:not(:last-child){
+    margin-bottom: 25;
+}
+.gender-field input[type="radio"]{
+    scale: 150%;
+}
+.update-form-row .textfield, .gender-field{
+    margin-left: 20;
+    width: 300px;
+}
+.update-form :first-child .textfield{
+    opacity: 0.5;
+}
+
 
 
 

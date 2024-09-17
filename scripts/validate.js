@@ -26,12 +26,20 @@ function validateSignIn(){
         SignPass = false;
         fname_error.innerHTML = "* Cannot be empty !";
     }
+    else if(!fname.value.match(/^[a-zA-Z]+$/)){// Should contain only letters
+        SignPass = false;
+        fname_error.innerHTML = "* Not a valid name !";
+    }
 
     /*----- Last Name Validation------*/
     lname_error.innerHTML = "";// Clear Previous messaegs
     if(lname.value == ''){// Empty check
         SignPass = false;
         lname_error.innerHTML = "* Cannot be empty !";
+    }
+    else if(!lname.value.match(/^[a-zA-Z]+$/)){// Should contain only letters
+        SignPass = false;
+        lname_error.innerHTML = "* Not a valid name !";
     }
 
     /*----- Phone Validation------*/
@@ -40,7 +48,7 @@ function validateSignIn(){
         SignPass = false;
         tele_error.innerHTML = "* Cannot be empty !";
     }
-    else if(!tele.value.match(/^[0-9]{10}$/)){
+    else if(!tele.value.match(/^[0-9]{10}$/)){// Should contain only 10 numbers
         SignPass = false;
         tele_error.innerHTML = "* Not a valid Phone number !";
     }
@@ -50,6 +58,10 @@ function validateSignIn(){
     if(address.value == ''){// Empty check
         SignPass = false;
         address_error.innerHTML = "* Cannot be empty !";
+    }
+    else if(address.value.match(/[!'@#$%^&*().?":{}|<>]/)){// Shouldn't contain special characters
+        SignPass = false;
+        address_error.innerHTML = "* Special characters are not allowed !";
     }
 
     /*----- Email Validation------*/
