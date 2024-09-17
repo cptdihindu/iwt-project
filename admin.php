@@ -26,32 +26,36 @@ if (isset($_SESSION['user_role'])) {
         if ($result) {
 ?>
             <table class="admin-table">
-                <tr>
-                    <td>No</td>
-                    <td>First Name</td>
-                    <td>Last Name</td>
-                    <td>Gender</td>
-                    <td>Phone</td>
-                    <td>Address</td>
-                    <td>E-mail</td>
-                    <td>Role</td>
-                    <td colspan="2">Modify</td>
-                </tr>
+                <tbody>
+                    <tr>
+                        <td>No</td>
+                        <td>First Name</td>
+                        <td>Last Name</td>
+                        <td>Gender</td>
+                        <td>Phone</td>
+                        <td>Address</td>
+                        <td>E-mail 🔑</td>
+                        <td>Role</td>
+                        <td colspan="2">Modify</td>
+                    </tr>
 
-                <?php while($row = mysqli_fetch_assoc($result)) {?>
-                <tr>
-                    <td><?php echo $row['no']?></td>
-                    <td><?php echo $row['fname']?></td>
-                    <td><?php echo $row['lname']?></td>
-                    <td><?php echo $row['gender']?></td>
-                    <td><?php echo $row['tele']?></td>
-                    <td><?php echo $row['address']?></td>
-                    <td><?php echo $row['email']?></td>
-                    <td><?php echo $row['role']?></td>
-                    <?php echo "<td><a href =php/update.php?email='".$row['email']."'><img class='admin-table-icon' src = 'icons/edit.png'></a></td>" ?>
-                    <?php echo "<td><a href =php/delete.php?email='".$row['email']."'><img class='admin-table-icon' src = 'icons/delete.png'></a></td>" ?>
-                </tr>
-                <?php } ?>
+                    <?php while($row = mysqli_fetch_assoc($result)) {?>
+                    <tr>
+                        <td><?php echo $row['no']?></td>
+                        <td><?php echo $row['fname']?></td>
+                        <td><?php echo $row['lname']?></td>
+                        <td><?php echo $row['gender']?></td>
+                        <td><?php echo $row['tele']?></td>
+                        <td><?php echo $row['address']?></td>
+                        <td><?php echo $row['email']?></td>
+                        <td><?php echo $row['role']?></td>
+
+                        <?php echo "<td><a href =php/update.php?no='".$row['no']."'><img class='admin-table-icon' src = 'icons/edit.png'></a></td>" ?>
+
+                        <?php echo "<td><a href =php/delete.php?no='".$row['no']."'><img class='admin-table-icon' src = 'icons/delete.png'></a></td>" ?>
+                    </tr>
+                    <?php } ?>
+                </tbody>
             </table>
 <?php
         }

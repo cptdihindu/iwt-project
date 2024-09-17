@@ -30,7 +30,7 @@
             }
         }
 
-        $sql = "INSERT INTO $tb_name($tb_fname, $tb_lname, $tb_gender, $tb_tele, $tb_adrs, $tb_email, $tb_pass, $tb_role)VAlUES('$fname', '$lname', '$gender', '$tele', '$address', '$sign_email', '$sign_pass', 'customer')";
+        $sql = "INSERT INTO $tb_name(`$tb_fname`, `$tb_lname`, `$tb_gender`, `$tb_tele`, `$tb_adrs`, `$tb_email`, `$tb_pass`, `$tb_role`)VAlUES('$fname', '$lname', '$gender', '$tele', '$address', '$sign_email', '$sign_pass', 'customer')";
 
         if(mysqli_query($conn, $sql)){
             $message = 'User registered successfully! You can login now.';

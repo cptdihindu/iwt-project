@@ -11,9 +11,11 @@ Finished,
 > After admin login through the default login, they have access to the admin page.
 > Questions in help page can expand and collapse.
 > Only admins can access the admin page.
+> Admin table added, admin tasks not working yet.
+> Admins can delete records of users.
 
 Working on,
 
-> Admin Tasks
+> Admin editing data
 > Ride enquiry
 > Driver registration (optional)

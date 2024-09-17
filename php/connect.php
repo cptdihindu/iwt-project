@@ -8,6 +8,7 @@ $server_db = "nexride";
 #table information
 $tb_name = "users";
 
+$tb_no = "no";
 $tb_fname = "fname";
 $tb_lname = "lname";
 $tb_gender = "gender";

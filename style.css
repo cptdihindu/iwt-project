@@ -421,33 +421,50 @@ h1{
 
 
 
+
 .admin-table{
+    display: flex;
+    justify-content: center;
     margin: 0 2%;
     color: rgb(168, 168, 168);
-    display: flex;
-    justify-content: space-around;
     font-size: 1em;
-    min-width: 400px;
     border-collapse: collapse;
 }
 .admin-table tr:first-child{
+    text-align: center;
     background-color: #101010;
+}
+.admin-table td:nth-child(6), .admin-table td:nth-child(7) /*Address and Email*/{
+    max-width: 300px;
 }
 .admin-table tr:not(:first-child):hover{
     background-color: rgb(54, 54, 54);
 }
 .admin-table td{
     border: 1px solid rgb(95, 95, 95);
-    padding: 5;
+    word-wrap: break-word;
+    padding: 5px 10px;
 }
 .admin-table .hl{
-    font-size: 20;
+    font-size: 20px;
     color: rgb(224, 224, 224);
 }
 .admin-table-icon{
     width: 30px;
+    opacity: 1;
+    transition: opacity 0.1s ease-in-out;
+}
+.admin-table-icon:hover{
+    opacity: 0.5;
+    transition: opacity 0.1s ease-in-out;
 }
 
+
+
+
+.update-form{
+    
+}
 
 
 
