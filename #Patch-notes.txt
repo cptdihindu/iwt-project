@@ -10,6 +10,7 @@ Finished,
 > Admins can be defined through phpmyadmin by changing their role to "admin"
 > After admin login through the default login, they have access to the admin page.
 > Questions in help page can expand and collapse.
+> Only admins can access the admin page.
 
 Working on,
 
