@@ -17,7 +17,10 @@
                     if(isset($_SESSION['user_role'])){
                         # Logged admins can access 'admin' page
                         if($_SESSION['user_role'] == 'admin'){
-                            echo "<li><a href=''>Admin</a></li>";
+                            if($page == "admin")
+                                echo "<li><a class='active' href='admin.php'>Admin</a></li>";
+                            else
+                                echo "<li><a href='admin.php'>Admin</a></li>";
                         }
                         # Logged customers can access 'ride' page
                         else if($_SESSION['user_role'] == 'customer'){

@@ -29,7 +29,7 @@ if(isset($_POST['login-submit'])){
         } else {
             // Login failed
             $msg = "Incorrect Username or password !";
-            //starting the session
+            // Ending the session
             session_destroy();
             // Redirect to index.php
             echo
