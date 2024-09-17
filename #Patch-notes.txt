@@ -15,7 +15,7 @@ Finished,
 > Admins can view database records from admin page.
 > Admins can delete database records.
 > Admins can edit database records.
-> Admins can create new admins through Admin page.
+> Admins can create new admins through admin page.
 
 Working on,
 
