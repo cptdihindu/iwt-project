@@ -274,23 +274,30 @@
             <div class="vehicle-row">
                 <div class="vehicle">
                     <h2 class="subtopic">Tuk</h2>
-                    <img src="" alt="Image of a tuk">
-                    <div class="">
-                    Base Fare (for 1km) LKR.80
+                    <img src="Images/Tuk.png" alt="Image of a tuk">
+                    <div class="content">
+                    Base Fare (for 2km) <br/>LKR.180<br/><br/>
+                    Waiting Fare <br/>Per Minute LKR. 7<br/><br/>
+                    Per Kilometer LKR. 80
+
                     </div>
                 </div>
                 <div class="vehicle">
                     <h2 class="subtopic">Nano Car</h2>
                     <img src="Images/Nano_Car.png" alt="Image of a  small car">
-                    <div class="">
-                    Base Fare (for 1km) LKR.120
+                    <div class="content">
+                    Base Fare (for 2km) <br/>LKR.240<br/><br/>
+                    Waiting Fare <br/>Per Minute LKR. 10<br/><br/>
+                    Per Kilometer LKR. 100
                     </div>
                 </div>
                 <div class="vehicle">
                     <h2 class="subtopic">Mini Car</h2>
-                    <img src="" alt="Image of a mini car">
-                    <div class="">
-                    Base Fare (for 1km) LKR.130
+                    <img src="Images/Mini_Car.png" alt="Image of a mini car">
+                    <div class="content">
+                    Base Fare (for 2km) <br/>LKR.260<br/><br/>
+                    Waiting Fare <br/>Per Minute LKR. 12<br/><br/>
+                    Per Kilometer LKR. 110
                     </div>
                 </div>
             </div>
@@ -299,23 +306,30 @@
             <div class="vehicle-row">
                 <div class="vehicle">
                     <h2 class="subtopic">Hybrid Car</h2>
-                    <img src="" alt="Image of a hybrid car">
-                    <div>
-                    Base Fare (for 1km) LKR.130
+                    <img src="Images/Hybrid_Car.png" alt="Image of a hybrid car">
+                    <div class="content">
+                    Base Fare (for 2km) <br/>LKR.300<br/><br/>
+                    Waiting Fare <br/>Per Minute LKR. 12<br/><br/>
+                    Per Kilometer LKR. 130
                     </div>
                 </div>
                 <div class="vehicle">
                     <h2 class="subtopic">Mini Van</h2>
-                    <img src="" alt="Image of a mini van">
-                    <div>
-                     Base Fare (for 1km) LKR.160    
+                    <img src="Images/Mini_Van.png" alt="Image of a mini van">
+                    <div class="content">
+                     Base Fare (for 2km) <br/>LKR.250<br/><br/>
+                     Waiting Fare <br/>Per Minute LKR. 15<br/><br/>
+                     Per Kilometer LKR. 120 
                     </div>
                 </div>
                 <div class="vehicle">
                     <h2 class="subtopic">Van Non A/C</h2>
-                    <img src="" alt="Image of a non A/C van">
-                    <div class="">
-                     Base Fare (for 1km) LKR.180
+                    <img src="Images/Van_Non_AC.png" alt="Image of a non A/C van">
+                    <div class="content">
+                     Base Fare (for 2km) <br/>LKR.270<br/><br/>
+                     Waiting Fare <br/>Per Minute LKR. 15<br/><br/>
+                     Per Kilometer LKR. 125
+                
                     </div>
                 </div>
             </div>
@@ -323,23 +337,29 @@
             <div class="vehicle-row">
                 <div class="vehicle">
                     <h2 class="subtopic">Van A/C</h2>
-                    <img src="Images/" alt="Image of a A/C van">
-                    <div class="">
-                    Base Fare (for 1km) LKR.240 
+                    <img src="Images/Van_AC.png" alt="Image of a A/C van">
+                    <div class="content">
+                    Base Fare (for 2km) <br/>LKR.320<br/><br/>
+                    Waiting Fare <br/>Per Minute LKR. 18<br/><br/>
+                    Per Kilometer LKR. 150
                     </div>
                 </div>
                 <div class="vehicle">
                     <h2 class="subtopic">Batta Lorry</h2>
-                    <img src="" alt="Image of a batta lorry">
-                    <div class="">
-                    Base Fare (for 1km) LKR.150
+                    <img src="Images/Batta_Lorry.png" alt="Image of a batta lorry">
+                    <div class="content">
+                    Base Fare (for 2km) <br/>LKR.280<br/><br/>
+                    Waiting Fare <br/>Per Minute LKR. 16<br/><br/>
+                    Per Kilometer LKR. 130
                     </div>
                 </div>
                 <div class="vehicle">
                     <h2 class="subtopic">Lorry</h2>
-                    <img src="" alt="Image of a lorry">
-                    <div class="">
-                    Base Fare (for 1km) LKR.170 
+                    <img src="Images/Lorry.png" alt="Image of a lorry">
+                    <div class="content">
+                    Base Fare (for 2km) <br/>LKR.280<br/><br/>
+                    Waiting Fare <br/>Per Minute LKR. 16<br/><br/>
+                    Per Kilometer LKR. 140
                     </div>
                 </div>
             </div>

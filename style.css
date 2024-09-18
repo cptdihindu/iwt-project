@@ -158,16 +158,50 @@ body{
 }
 .service:hover, .vehicle:hover{
     transition: transform 0.2s ease-in-out;
-    transform: scale(105%);
+    transform: scale(103%);
 }
-.service img, .vehicle img{
+.service img{
     /*width: 150;*/
     max-width: 150;
     width: 60%;
 }
+.vehicle img{
+    width: 65%;
+    margin-bottom: 15;
+    margin-top: 25;
+}
+.vehicle-row{
+    margin-bottom:25;
+}
+.vehicle{
+    border-radius: 0;
+    width: 27%;
+    padding: 0;
+    padding-bottom: 50;
+}
+.vehicle .subtopic{
+    font-style: bold;
+    font-weight: 500 ;
+    margin: 0;
+    width: 100%;
+    height: 68;
+    background-color: orange;
+    color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.vehicle .content{
+    text-align: center;
+    color:  rgb(197, 197, 197);
+    font-size: 18;
+}
 .service:last-child img{
     padding-top: 30;
 }
+
+
+
 
 
 
@@ -391,7 +425,7 @@ body{
 .all-boxes{
     padding: 80 0 50 0;
     background-color: rgb(17, 17, 17);
-    border-top: 5px solid orange;
+    border-top: 2px solid orange;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -399,7 +433,7 @@ body{
 }
 .box{
     position: relative;
-    border: 1px solid white;
+    border: 3px solid rgb(48, 48, 48);
     /*border-radius: 10px;*/
     margin: 15;
     width: 60%;
@@ -409,7 +443,7 @@ body{
     cursor: pointer;
     border: none;
     color: white;
-    background-color: rgb(100, 100, 100); /* Same bg color */
+    background-color: rgba(0, 0, 0, 0); /* Same bg color */
     padding: 2;
     position: absolute;
     font-size: 10;
@@ -425,8 +459,9 @@ body{
     border-bottom-right-radius: 10px;
     */
     text-align: center;
-    color: white;
-    background-color: rgb(100, 100, 100); /* Same bg color */
+    color: rgb(197, 197, 197);
+    font-size: 18;
+    background-color: rgb(48, 48, 48); /* Same bg color */
     padding: 10;
 }
 .expanded-question{
@@ -437,6 +472,7 @@ body{
     display: none; /* ################## */
     text-align: justify;
     padding: 10 20;
+    background-color: #00000000;
 }
 .expanded-answer{
     display: block;
@@ -544,21 +580,43 @@ body{
 
 
 /*About Styles*/
-.about-image, .about-content, .about-blank {
-    border: 1px solid white;
-}
 
-.about-image {
-    height: 300px;
+.about-image img{
+    width: 100%;
 }
-   
 .about-blank{
-    height: 60px;
+    background-color: orange;
+    color: black;
+    padding:10px;
+}
+.about-blank h3 a{
+    color:rgb(91, 91, 91);
+    text-decoration: none;
+    transition: color 0.1s ease-in-out;
 }
 
-.about-content{
-    height: 700px;
+.about-blank h3 a:hover{
+    color:rgb(0, 0, 0);
+    transition: color 0.1s ease-in-out;
 }
+ 
+
+
+.about-content h1{
+    text-align: center;
+}
+.about-content h3{
+    text-align: left;
+}
+.about-content h1, .about-content h3{
+    border: none;
+    color:white;
+}
+.about-content , .about-blank {
+    padding:10 120;
+}
+
+
 
 
 
