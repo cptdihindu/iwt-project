@@ -1,3 +1,7 @@
+latest,
+
+> When an admin changed a user's email it checks that new email already exists in the database.
+
 Finished,
 
 > Sign in, Login, Logout system functioning properply.
@@ -5,12 +9,12 @@ Finished,
 > Logout button only displays if the user logged in.
 > Logged users cannot login again until they logout.
 > Random banners displays on homepage according to the user type (guest or logged user).
-> Signin form validation working properly.
+> Sign in form validation working properly.
 > All users who fill the sign in form will defined as the role "customer".
 > Admins can be defined through phpmyadmin by changing their role to "admin".
 > After admin login through the default login, they have access to the admin page.
 > Questions in help page can expand and collapse.
-> Only admins can access the admin, update, delte pages.
+> Only admins can access the admin, update, delete pages.
 
 > Admins can view database records from admin page.
 > Admins can delete database records.

@@ -10,9 +10,11 @@ require_once('nav-variables.php');
 require_once('login.php');
 require_once('connect.php');
 $page = "admin";
+
 require_once('../header.php');
 
 echo "<div class='nav-margin'></div>";
+$old_email = $_GET['email'];
 
 if(isset($_POST['update-btn'])){
     $up_no = $_POST['no'];
@@ -21,43 +23,52 @@ if(isset($_POST['update-btn'])){
     $up_gender = $_POST['gender'];
     $up_tele = $_POST['tele'];
     $up_address = $_POST['address'];
+
     $up_email = $_POST['email'];
     $up_role = $_POST['role'];
 
-    $sql = "SELECT * FROM `$tb_name` WHERE `$tb_email` = '$up_email'";
-    $result = mysqli_query($conn, $sql);
+    $current_url = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['SCRIPT_NAME'] . "?no=" . urlencode($up_no) . "&email=" . urlencode($old_email);
 
-    $current_url = "http://".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI']."?no=".$up_no;
+    #if old email and new email are different
+    if($old_email != $up_email){
+        $sql = "SELECT * FROM `$tb_name` WHERE `$tb_email` = '$up_email'";
+        $result = mysqli_query($conn, $sql);
 
-    if($result){
-        if(mysqli_num_rows($result) > 0){
-            // E-mail already found
-            $msg = "This email is taken. Use a different one !";
-            echo
-            "<script>
-                alert('$msg');
-                window.location.href = '$current_url';
-            </script>";
-            die();
-        }
-        else{ // E-mail not found
-
-            // Updating Data
-            $sql = "UPDATE `$tb_name` SET `$tb_fname`='$up_fname', `$tb_lname`='$up_lname', `$tb_gender`='$up_gender', `$tb_tele`='$up_tele', `$tb_adrs`='$up_address', `$tb_email`='$up_email', `$tb_role`='$up_role' WHERE `$tb_no`='$up_no'";
-
-            $result = mysqli_query($conn, $sql);
-        
-            if($result){
+        if($result){
+            if(mysqli_num_rows($result) > 0){# E-mail already found
+                $msg = "This email is taken. Use a different one !";
+                echo
+                "<script>
+                    alert('$msg');
+                    window.location.href = '$current_url';
+                </script>";
+            }
+            else{# E-mail not found
                 $msg = "Changes Saved !";
                 echo
                 "<script>
                     alert('$msg');
                     window.location.href = '../admin.php';
                 </script>";
-                die();
             }
         }
-    }   
+    # if old and new emaols are same
+    }else{
+        // Updating Data
+        $sql = "UPDATE `$tb_name` SET `$tb_fname`='$up_fname', `$tb_lname`='$up_lname', `$tb_gender`='$up_gender', `$tb_tele`='$up_tele', `$tb_adrs`='$up_address', `$tb_email`='$up_email', `$tb_role`='$up_role' WHERE `$tb_no`='$up_no'";
+        
+        $result = mysqli_query($conn, $sql);
+
+        if($result){
+            $msg = "Changes Saved !";
+            echo
+            "<script>
+                alert('$msg');
+                window.location.href = '../admin.php';
+            </script>";
+        }
+    }
+    
 }
 if (isset($_SESSION['user_role'])) {
     # Logged admins can access 'admin' page
@@ -74,7 +85,7 @@ if (isset($_SESSION['user_role'])) {
             if($result){
                 ?>
                 <div class="update-form-wrapper">
-                    <form class="update-form" action="update.php" method="post">
+        <?php echo "<form class='update-form'  method='post'>" ?>
                         <div class="update-form-row"><div>No :</div>
                             <div>
                                 <?php echo "<input class='textfield' type='text' name='no' value='".$row['no']."' required readonly>"; ?>

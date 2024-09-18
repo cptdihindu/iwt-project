@@ -50,7 +50,7 @@ if (isset($_SESSION['user_role'])) {
                         <td><?php echo $row['email']?></td>
                         <td><?php echo $row['role']?></td>
 
-                        <?php echo "<td><a href =php/update.php?no='".$row['no']."'><img class='admin-table-icon' src = 'icons/edit.png'></a></td>" ?>
+                        <?php echo "<td><a href='php/update.php?no=" . $row['no'] . "&email=" . urlencode($row['email']) . "'><img class='admin-table-icon' src='icons/edit.png'></a></td>"; ?>
 
                         <?php echo "<td><a href =php/delete.php?no='".$row['no']."'><img class='admin-table-icon' src = 'icons/delete.png'></a></td>" ?>
                     </tr>
