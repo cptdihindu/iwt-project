@@ -265,6 +265,88 @@
                 </tbody>
             </table>
         </div>
+
+<!-----------------------------------------------------------Vehicles-------------------------------------------------------------------------------->
+        <!----------------------------------------1st row------------------------------------------->
+        <div class="wrapper">
+            <div class="topic">Our options</div>
+
+            <div class="vehicle-row">
+                <div class="vehicle">
+                    <h2 class="subtopic">Tuk</h2>
+                    <img src="" alt="Image of a tuk">
+                    <div class="">
+                    Base Fare (for 1km) LKR.80
+                    </div>
+                </div>
+                <div class="vehicle">
+                    <h2 class="subtopic">Nano Car</h2>
+                    <img src="Images/Nano_Car.png" alt="Image of a  small car">
+                    <div class="">
+                    Base Fare (for 1km) LKR.120
+                    </div>
+                </div>
+                <div class="vehicle">
+                    <h2 class="subtopic">Mini Car</h2>
+                    <img src="" alt="Image of a mini car">
+                    <div class="">
+                    Base Fare (for 1km) LKR.130
+                    </div>
+                </div>
+            </div>
+
+            <!----------------------------------------2nd row------------------------------------------->
+            <div class="vehicle-row">
+                <div class="vehicle">
+                    <h2 class="subtopic">Hybrid Car</h2>
+                    <img src="" alt="Image of a hybrid car">
+                    <div>
+                    Base Fare (for 1km) LKR.130
+                    </div>
+                </div>
+                <div class="vehicle">
+                    <h2 class="subtopic">Mini Van</h2>
+                    <img src="" alt="Image of a mini van">
+                    <div>
+                     Base Fare (for 1km) LKR.160    
+                    </div>
+                </div>
+                <div class="vehicle">
+                    <h2 class="subtopic">Van Non A/C</h2>
+                    <img src="" alt="Image of a non A/C van">
+                    <div class="">
+                     Base Fare (for 1km) LKR.180
+                    </div>
+                </div>
+            </div>
+            <!----------------------------------3rd row---------------------------------------------------->
+            <div class="vehicle-row">
+                <div class="vehicle">
+                    <h2 class="subtopic">Van A/C</h2>
+                    <img src="Images/" alt="Image of a A/C van">
+                    <div class="">
+                    Base Fare (for 1km) LKR.240 
+                    </div>
+                </div>
+                <div class="vehicle">
+                    <h2 class="subtopic">Batta Lorry</h2>
+                    <img src="" alt="Image of a batta lorry">
+                    <div class="">
+                    Base Fare (for 1km) LKR.150
+                    </div>
+                </div>
+                <div class="vehicle">
+                    <h2 class="subtopic">Lorry</h2>
+                    <img src="" alt="Image of a lorry">
+                    <div class="">
+                    Base Fare (for 1km) LKR.170 
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
         <?php require_once('footer.php') // including footer file ?>
         <script src="scripts/popups.js"></script>
     </body>

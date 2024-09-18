@@ -129,11 +129,11 @@ body{
     padding-right: 5%;
 }
 
-.services{
+.services, .vehicle-row{
     display: flex;
     justify-content: space-around;
 }
-.service{
+.service, .vehicle{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -149,18 +149,18 @@ body{
     color: rgb(213, 213, 213);
     text-align: center;
 }
-.service .content{
+.service .content, .vehicle .content{
     margin-top: 30;
     text-align: justify;
 }
-.service{
+.service, .vehicle{
     transition: transform 0.2s ease-in-out;
 }
-.service:hover{
+.service:hover, .vehicle:hover{
     transition: transform 0.2s ease-in-out;
     transform: scale(105%);
 }
-.service img{
+.service img, .vehicle img{
     /*width: 150;*/
     max-width: 150;
     width: 60%;
@@ -537,6 +537,27 @@ body{
     position: absolute;
     top: 39;
     right: 15;
+}
+
+
+
+
+
+/*About Styles*/
+.about-image, .about-content, .about-blank {
+    border: 1px solid white;
+}
+
+.about-image {
+    height: 300px;
+}
+   
+.about-blank{
+    height: 60px;
+}
+
+.about-content{
+    height: 700px;
 }
 
 
