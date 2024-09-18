@@ -24,7 +24,7 @@
                     }
                 ?>
             </span>
-
+<!--------------------------------------------------------------Welcome note-------------------------------------------------------------------------------->
         </div>
         <div class="welcome-note">
             <div class="topic">
@@ -34,7 +34,8 @@
                 Let’s hit the road together! Experience the difference with Your Ride, Your Way. Your adventure awaits! 🌟
             </div>
         </div>
-        
+
+<!--------------------------------------------------------------Dynamic banners-------------------------------------------------------------------------------->
         <?php
             # banner for logged users
             if(!empty($_SESSION['user_fname'])){
@@ -52,6 +53,7 @@
             }
         ?>
 
+<!--------------------------------------------------------------Services-------------------------------------------------------------------------------->
         <div class="wrapper">
             <div class="topic">Our services</div>
             <div class="services">
@@ -90,7 +92,7 @@
                         </button>";
                     }
                 ?>
-
+<!--------------------------------------------------------Login popup-------------------------------------------------------------------------------->
                 <div class="login-popup" id="login-popup">
 <!--Login form-->
                 <form id="c_login_form" action="php/login.php" method="post">
@@ -100,21 +102,20 @@
                         E-mail<br>
                         <input type="text" name="login-email" class="textfield">
                     </div>
-                    <div class="login-row">
+                    <div class="login-row" id="login-password-row">
                         Password<br>
-                        <input type="password" name="login-pass" class="textfield">
+                        <input id="login-pass" type="password" name="login-pass" class="textfield">
+                        <img id="login-eye" src="icons/eye-close.png">
                     </div>
                     <div class="login-row">
-
-<!--Login submit button-->
-                        <input type="submit" name="login-submit" value="Login" class="login-submit">
+                        <input type="submit" name="login-submit" value="Login" class="login-submit"><!--Login submit button-->
                     </div>
                     <div>
                         Don't have an account ? <a class="loginSignRedir" onclick="openSignInPopup()">register</a>
                     </div>
                 </form>
                 </div>
-
+<!--------------------------------------------------------Sign in popup-------------------------------------------------------------------------------->
                 <div class="sign-in-popup" id="sign-in-popup">
 <!--Sign in form-->
                 <form id="c_sign_in_form" action="php/sign-in.php" method="post" onkeyup="validateSignIn()" onsubmit="return validateSignIn()">
@@ -153,20 +154,20 @@
                         <span id="sign-email-note"></span><!--JS Error note-->
                         <input type="text" id="sign-email" name="sign-email" class="textfield">
                     </div>
-                    <div class="login-row">
+                    <div class="login-row" id="sign-password-row">
                         Create a Password
                         <span id="sign-pass-note"></span><!--JS Error note-->
                         <input type="password" id="sign-pass" name="sign-pass" class="textfield">
+                        <img id="sign-eye" src="icons/eye-close.png">
                     </div>
-                    <div class="login-row">
+                    <div class="login-row" id="sign-re-password-row">
                         Repeat Password
                         <span id="re-sign-pass-note"></span><!--JS Error note-->
                         <input type="password" id="re-sign-pass" name="re-sign-pass" class="textfield">
+                        <img id="sign-re-eye" src="icons/eye-close.png">
                     </div>
                     <div class="login-row">
-
-<!--Sign-in submit button-->
-                        <input type="submit" name="sign-in-submit" value="Sign In" class="login-submit">
+                        <input type="submit" name="sign-in-submit" value="Sign In" class="login-submit"><!--Sign-in submit button-->
                     </div>
 
                     <div>
@@ -176,7 +177,51 @@
                 </div>
             </div>
         </div>
+<!------------------------------------------------Javascript for password eye toggling-------------------------------------------------------------------------------->
+        <script>
+            var loginEye = document.getElementById("login-eye");
+            var signEye = document.getElementById("sign-eye");
+            var signReEye = document.getElementById("sign-re-eye");
 
+            var loginPass = document.getElementById("login-pass");
+            var signPass = document.getElementById("sign-pass");
+            var signRePass = document.getElementById("re-sign-pass");
+
+            loginEye.onclick = function(){
+                if(loginPass.type == "password"){
+                    loginPass.type = "text";
+                    loginEye.src = "icons/eye-open.png";
+                }
+                else if(loginPass.type = "text"){
+                    loginPass.type = "password";
+                    loginEye.src = "icons/eye-close.png";
+                }
+            }
+
+            signEye.onclick = function(){
+                if(signPass.type == "password"){
+                    signPass.type = "text";
+                    signEye.src = "icons/eye-open.png";
+                }
+                else if(signPass.type = "text"){
+                    signPass.type = "password";
+                    signEye.src = "icons/eye-close.png";
+                }
+            }
+
+            signReEye.onclick = function(){
+                if(signRePass.type == "password"){
+                    signRePass.type = "text";
+                    signReEye.src = "icons/eye-open.png";
+                }
+                else if(signRePass.type = "text"){
+                    signRePass.type = "password";
+                    signReEye.src = "icons/eye-close.png";
+                }
+            }
+        </script>
+
+<!-----------------------------------------------------------Why choose us-------------------------------------------------------------------------------->
         <div class="wrapper">
             <div class="topic">Why Choose Us?</div>
             <table class="feature-table">

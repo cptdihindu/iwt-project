@@ -350,7 +350,7 @@ body{
 .textfield:-webkit-autofill:hover,
 .textfield:-internal-autofill-selected {
     -webkit-box-shadow: 0 0 0 30px #101010 inset !important; /* Matches input background */
-    -webkit-text-fill-color: rgb(203, 203, 203) !important;  /* Matches input text color */
+    -webkit-text-fill-color: rgb(0, 12, 89) !important;  /* Matches input text color */
     font-size: 20px !important; /* Forces consistent font size */
     transition: background-color 5000s ease-in-out 0s;
 }
@@ -466,29 +466,54 @@ h1{
     justify-content: center;
 }
 .update-form{
+    position: relative;
     background-color: #101010;
     border-radius: 5px;
     font-size: 20;
-    width: 450px;
+    width: 600px;
     border: 1px solid orange;
     padding: 30;
 }
 .update-form-row{
+    position: relative;
     display: flex;
     justify-content: right;
+}
+.update-form-row span{
+    top: 35;
+    left: 160;
+    font-size: 13px;
+    color: red;
+    position: absolute;
 }
 .update-form-row:not(:last-child){
     margin-bottom: 25;
 }
-.gender-field input[type="radio"]{
+.radio-field input[type="radio"]{
+    accent-color: #0051ff;
     scale: 150%;
 }
-.update-form-row .textfield, .gender-field{
+.update-form-row .textfield, .radio-field{
     margin-left: 20;
-    width: 300px;
+    width: 450px;
 }
 .update-form :first-child .textfield{
     opacity: 0.5;
+}
+
+
+
+
+#login-password-row, #sign-password-row, #sign-re-password-row{
+    position: relative;
+}
+#login-eye, #sign-eye, #sign-re-eye{
+    cursor: pointer;
+    z-index: 1;
+    width: 28px;
+    position: absolute;
+    top: 37;
+    right: 15;
 }
 
 

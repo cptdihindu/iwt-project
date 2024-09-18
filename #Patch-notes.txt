@@ -1,5 +1,6 @@
 latest,
 
+> Password visibility toggling working in login, signin forms.
 > When an admin changed a user's email it checks that new email already exists in the database.
 
 Finished,

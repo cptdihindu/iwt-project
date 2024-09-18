@@ -85,42 +85,50 @@ if (isset($_SESSION['user_role'])) {
             if($result){
                 ?>
                 <div class="update-form-wrapper">
-        <?php echo "<form class='update-form'  method='post'>" ?>
+        <?php echo "<form class='update-form'  method='post' onkeyup='validateUpdateForm()' onsubmit='return validateUpdateForm()'>" ?>
                         <div class="update-form-row"><div>No :</div>
                             <div>
-                                <?php echo "<input class='textfield' type='text' name='no' value='".$row['no']."' required readonly>"; ?>
+                                <?php echo "<input class='textfield' type='text' name='no' value='".$row['no']."'  readonly>"; ?>
                             </div>
                         </div>
 
                         <div class="update-form-row"><div>First Name :</div>
-                            <?php echo "<input class='textfield' type='text' name='fname' value='".$row['fname']."' required>"; ?>
+                            <?php echo "<input id='fname' class='textfield' type='text' name='fname' value='".$row['fname']."' >"; ?>
+                            <span id="fname-note"></span><!--JS Error note-->
                         </div>
 
                         <div class="update-form-row"><div>Last Name :</div>
-                            <?php echo "<input class='textfield' type='text' name='lname' value='".$row['lname']."' required>"; ?>
+                            <?php echo "<input id='lname' class='textfield' type='text' name='lname' value='".$row['lname']."' >"; ?>
+                            <span id="lname-note"></span><!--JS Error note-->
                         </div>
 
                         <div class="update-form-row"><div>Gender :</div>
-                            <div class="gender-field">
+                            <div class="radio-field">
                                 <input type='radio' name='gender' value='m' <?php if($row['gender'] == 'm') echo 'checked'?> required> Male &nbsp;&nbsp;
                                 <input type='radio' name='gender' value='f' <?php if($row['gender'] == 'f') echo 'checked'?> required> Female
-                            </div>                        
+                            </div>                       
                         </div>
 
                         <div class="update-form-row"><div>Phone :</div>
-                            <?php echo "<input class='textfield' type='text' name='tele' value='".$row['tele']."' required>"; ?>
+                            <?php echo "<input id='tele' class='textfield' type='text' name='tele' value='".$row['tele']."' >"; ?>
+                            <span id="tele-note"></span><!--JS Error note-->
                         </div>
 
                         <div class="update-form-row"><div>Address :</div>
-                            <?php echo "<input class='textfield' type='text' name='address' value='".$row['address']."' required>"; ?>
+                            <?php echo "<input id='address' class='textfield' type='text' name='address' value='".$row['address']."' >"; ?>
+                            <span id="address-note"></span><!--JS Error note-->
                         </div>
 
                         <div class="update-form-row"><div>E-mail :</div>
-                            <?php echo "<input class='textfield' type='text' name='email' value='".$row['email']."' required>"; ?>
+                            <?php echo "<input id='email' class='textfield' type='text' name='email' value='".$row['email']."' >"; ?>
+                            <span id="email-note"></span><!--JS Error note-->
                         </div>
 
                         <div class="update-form-row"><div>Role :</div>
-                            <?php echo "<input class='textfield' type='text' name='role' value='".$row['role']."' required>"; ?>
+                            <div class="radio-field">
+                                <input type='radio' name='role' value='admin' <?php if($row['role'] == 'admin') echo 'checked'?> required> Admin &nbsp;&nbsp;
+                                <input type='radio' name='role' value='customer' <?php if($row['role'] == 'customer') echo 'checked'?> required> Customer
+                            </div>
                         </div>
                         <div class="update-form-row">
                             <input name="update-btn" class="login-submit" type="submit" value="Update">
@@ -142,5 +150,6 @@ if (isset($_SESSION['user_role'])) {
 ?>
 
 <?php require_once('../footer.php'); ?>
+<script src="../scripts/validate.js"></script>
 </body>
 
