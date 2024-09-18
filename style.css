@@ -367,11 +367,31 @@ body{
 
 
 
-h1{
-    color: rgb(208, 208, 208);
+
+.help-body{
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.help-body h1{
+    font-size: 1.5em;
+    widows: 30%;
+    font-weight: normal;
+    padding: 15 50;
+    position: relative;
+    top: 110;
+    color: rgb(0, 0, 0);
+    border-radius: 5px;
     margin-bottom: 75;
+    background-color: orange;
 }
 .all-boxes{
+    padding: 80 0 50 0;
+    background-color: rgb(17, 17, 17);
+    border-top: 5px solid orange;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -380,9 +400,10 @@ h1{
 .box{
     position: relative;
     border: 1px solid white;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     margin: 15;
-    width: 600;
+    width: 60%;
+    max-width: 600px;
 }
 .expand-btn{
     cursor: pointer;
@@ -397,10 +418,12 @@ h1{
     top: 12;
 }
 .question{
+    /*
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
+    */
     text-align: center;
     color: white;
     background-color: rgb(100, 100, 100); /* Same bg color */
@@ -512,7 +535,7 @@ h1{
     z-index: 1;
     width: 28px;
     position: absolute;
-    top: 37;
+    top: 39;
     right: 15;
 }
 
