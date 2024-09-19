@@ -619,6 +619,7 @@ input[type="radio"]{
 
 
 
+
 /*Ride Styles*/
 .ride-form-holder{
     display: flex;
@@ -664,6 +665,36 @@ input[type="time"]::-webkit-calendar-picker-indicator {
 }
 #vehicleOpt-note{
     color: rgb(158, 158, 158);
+}
+
+
+
+
+
+.active-ride-table-holder{
+    margin-bottom: 50;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.active-ride-table{
+    min-width: 500px;
+    text-align: center;
+    width: 80%;
+    font-size: 18;
+    border-collapse: collapse;
+    box-shadow:3px 3px 15px 10px rgba(0, 0, 0, 0.326);
+}
+.active-ride-table tr:first-child{
+    background-color: black;
+}
+.active-ride-table tr:last-child{
+    color: #bfbfbf;
+}
+.active-ride-table td{
+    border: 1px solid rgb(129, 129, 129);
+    width: 15%;
+    padding: 10 0;
 }
 
 

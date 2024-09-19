@@ -15,8 +15,9 @@ require_once('header.php');
 echo "<div class='nav-margin'></div>";
 ?>
 
+
 <?php
-#--------------------------------------------------------Check the user before view---------------------------------------
+#--------------------------------------------------------Check the user before view the page---------------------------------------
 if (isset($_SESSION['user_role'])) {
     # Logged customers can access 'ride' page
     if ($_SESSION['user_role'] != 'customer') {
@@ -30,6 +31,50 @@ else{
 }
 
 ?>
+
+
+<div><!-----------------------------------------------PHP CODE TO VIEW ACTIVE BOOKINGS ------------------------------------------->
+    <?php
+
+    # Checking the customer has already booked
+    $cus_no = $_SESSION['user_no'];
+    $sql = "SELECT * FROM bookings WHERE no = $cus_no";
+    $result = mysqli_query($conn, $sql);
+    $row = mysqli_fetch_assoc($result);
+
+    if(mysqli_num_rows($result) > 0){ ?>
+        <div class="topic">Active Rides</div>
+        <div class="active-ride-table-holder">
+            <table class="active-ride-table">
+                <tbody>
+                    <tr>
+                        <td>Pickup Date</td>
+                        <td>Pickup Time</td>
+                        <td>Vehicle</td>
+                        <td>Pickup Location</td>
+                        <td>Drop Location</td>
+                        <td>Actions</td>
+                    </tr>
+
+                    <tr>
+                        <td><?php echo $row['date'] ?></td>
+                        <td><?php echo $row['time'] ?></td>
+                        <td><?php echo $row['vehicle'] ?></td>
+                        <td><?php echo $row['pickLoc'] ?></td>
+                        <td><?php echo $row['dropLoc'] ?></td>
+
+                        <?php echo "<td><a href ='ride-cancel.php?no=$cus_no'><img class='admin-table-icon' src = 'icons/delete.png'></a></td>" ?>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="content">You have an existing ride booked. Complete or cancel it to book again.</div>
+
+    <?php    
+    } else {
+    ?>
+</div>
+
 
 <!---------------------------------------------------ride booking form--------------------------------------------------->
 <div class="ride-form-holder">
@@ -79,6 +124,8 @@ else{
         </div>
     </form>
 </div>
+
+<?php } ?>
 
 <!--------------------------------Javascript for ride booking--------------------------->
 <script>
@@ -257,7 +304,7 @@ else{
 
 </div>
 
-<div><!-----------------------------------------------PHP CODE------------------------------------------->
+<div><!-----------------------------------------------PHP CODE TO BOOK RIDE ------------------------------------------->
     <?php
     #original code
     if(isset($_POST['bookCab'])){

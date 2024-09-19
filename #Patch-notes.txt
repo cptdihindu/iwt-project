@@ -1,5 +1,7 @@
 latest,
 
+> Customers cannot book another ride until the active ride cancels.
+> Customers can delete booked rides.
 > Ride enquiry validation working.
 > Ride enquiry working.
 > About page interface improved. 
