@@ -26,7 +26,7 @@
                     alert('$message');
                     window.location.href = '../index.php';
                 </script>";
-                die();
+                die();   //stops the process
             }
         }
 

@@ -30,8 +30,8 @@ require_once('index.php');
         <h3> A Brief description Of Our Company </h3>
 
        <p align="justify"> NexRide, having opened its doors on 5th september 2023 at Norris Canal road, Colombo 10,, 
-        is currently the pioneer cab Servicse company in Sri Lanka. While still operating at the same location it has moved its main practice to spacious location at No. 06, Ward Place Colombo Sri Lanka.
-        Where its corporate office is located.
+        is currently the pioneer cab Service company in Sri Lanka. While still operating at the same location it has moved its main practice to spacious location at No. 06, Ward Place Colombo Sri Lanka.
+        Where its coorporate office is located.
         The main reason for success of <b><i> NexRide </i></b> is providing good service of well trained staff. </p>
         
         <h3>Our Vision </h3>

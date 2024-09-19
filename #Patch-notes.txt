@@ -30,5 +30,25 @@ Finished,
 
 Working on,
 
-> Customers can cancel rides.
 > Driver registration (optional)
+
+
+----------------------------------------------------------------------------------------------------------
+
+Malshi
+> Made the Help page and some styles
+> Made the Feature page with contributing with Amalsha.
+> Home page "our options" section with all images and details with some styles.
+
+Amalsha
+> Made the about page and apllied all styles.
+> Contributed with Malshi to creating the Features page.
+> Designed the signin form and applied some styles.
+> Designed the footer part.
+
+Hesara
+>
+
+Chenal
+> Rest of the home page.
+> Javascript validations for the forms.
