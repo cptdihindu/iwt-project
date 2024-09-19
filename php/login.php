@@ -21,7 +21,8 @@ if(isset($_POST['login-submit'])){
             // Store user information in session variables
             $_SESSION['user_fname'] = $userdata['fname']; // Getting fname
             $_SESSION['user_role'] = $userdata['role']; // Getting role
-    
+            $_SESSION['user_no'] = $userdata['no']; // Getting number
+
             // Redirect to index.php
             header("Location: ../index.php");
             exit();
@@ -42,9 +43,4 @@ if(isset($_POST['login-submit'])){
         }
     }
 }
-
-
-
-// Close the connection mysqli_close($conn);
-
 ?>

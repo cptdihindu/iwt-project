@@ -43,9 +43,14 @@
                             else
                                 echo "<li><a href='$final_link'>Admin</a></li>";
                         }
+
+#--------------------------------------------------------To Ride Page ---------------------------------------
                         # Logged customers can access 'ride' page
                         else if($_SESSION['user_role'] == 'customer'){
-                            echo "<li><a href=''>Ride</a></li>";
+                            if($page == "ride")   
+                                echo "<li><a class='active' href='ride.php'>Ride</a></li>";
+                            else
+                            echo "<li><a href='ride.php'>Ride</a></li>";
                         }
                     }
                     /* Guests can access 'driver' page

@@ -1,5 +1,6 @@
 latest,
 
+> Ride enquiry working.
 > About page interface improved. 
 > Home page vehicles added.
 > Password visibility toggling working in login, signin forms.
@@ -26,5 +27,4 @@ Finished,
 
 Working on,
 
-> Ride enquiry
 > Driver registration (optional)

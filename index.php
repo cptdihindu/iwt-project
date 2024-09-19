@@ -266,11 +266,12 @@
             </table>
         </div>
 
-<!-----------------------------------------------------------Vehicles-------------------------------------------------------------------------------->
-        <!----------------------------------------1st row------------------------------------------->
+<!-----------------------------------Vehicles will appear in the home page if the user is not a customer-------------------------------------------------->
+    <?php if(empty($_SESSION['user_role']) || $_SESSION['user_role'] != 'customer'){ ?>
+
         <div class="wrapper">
             <div class="topic">Our options</div>
-
+            <!----------------------------------------1st row------------------------------------------->
             <div class="vehicle-row">
                 <div class="vehicle">
                     <h2 class="subtopic">Tuk</h2>
@@ -366,6 +367,7 @@
 
         </div>
 
+    <?php } ?>
 
         <?php require_once('footer.php') // including footer file ?>
         <script src="scripts/popups.js"></script>

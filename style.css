@@ -580,7 +580,6 @@ body{
 
 
 /*About Styles*/
-
 .about-image img{
     width: 100%;
 }
@@ -599,7 +598,61 @@ body{
     color:rgb(0, 0, 0);
     transition: color 0.1s ease-in-out;
 }
- 
+
+
+
+
+/*Ride Styles*/
+.ride-form-holder{
+    display: flex;
+    justify-content: center;
+}
+
+.ride-form{
+    box-shadow:3px 3px 15px 10px rgba(0, 0, 0, 0.453);
+    font-size: 18;
+    border-radius: 10px;
+    padding: 30 70;
+    border:1px solid rgb(127, 127, 127);
+    min-width: 400;
+    width: 48%;
+}
+.ride-form .topic{
+    margin: 0;
+    margin-bottom: 15;
+}
+.ride-form .login-submit{
+    margin-top: 20;
+    box-shadow:3px 3px 15px 10px rgba(0, 0, 0, 0.296);
+}
+#dateAndTime{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+#dateAndTime div{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+input[type="date"]::-webkit-calendar-picker-indicator {
+    padding-right: 10;
+    filter: invert(1); /* This will turn the icon white */
+}
+
+input[type="time"]::-webkit-inner-spin-button,
+input[type="time"]::-webkit-calendar-picker-indicator {
+    padding-right: 10;
+    filter: invert(1); /* This will turn the time input icon white */
+}
+#vehicleOpt-note{
+    color: rgb(158, 158, 158);
+}
+
+
+
+
+
 
 
 .about-content h1{
