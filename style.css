@@ -379,15 +379,32 @@ body{
 }
 
 /* Autofill styles for Chrome */
+/* General autofill styles */
 .textfield:-webkit-autofill,
 .textfield:-webkit-autofill:focus,
 .textfield:-webkit-autofill:hover,
 .textfield:-internal-autofill-selected {
-    -webkit-box-shadow: 0 0 0 30px #101010 inset !important; /* Matches input background */
-    -webkit-text-fill-color: rgb(0, 12, 89) !important;  /* Matches input text color */
+    -webkit-box-shadow: 0 0 0 30px transparent inset !important; /* Matches input background with transparency */
+    -webkit-text-fill-color: #ffffff !important;  /* White text color */
+    background-color: transparent !important; /* Ensures background is transparent */
     font-size: 20px !important; /* Forces consistent font size */
     transition: background-color 5000s ease-in-out 0s;
 }
+
+/* Additional styles for specific input types */
+input[type="text"]:-webkit-autofill,
+input[type="email"]:-webkit-autofill,
+input[type="address"]:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 30px transparent inset !important; /* Ensures background color is transparent */
+    -webkit-text-fill-color: #ffffff !important;  /* White text color */
+    background-color: transparent !important; /* Ensures background is transparent */
+}
+
+
+
+
+
+
 
 
 
@@ -548,7 +565,7 @@ body{
 .update-form-row:not(:last-child){
     margin-bottom: 25;
 }
-.radio-field input[type="radio"]{
+input[type="radio"]{
     accent-color: #0051ff;
     scale: 150%;
 }

@@ -33,32 +33,32 @@ else{
 
 <!---------------------------------------------------ride booking form--------------------------------------------------->
 <div class="ride-form-holder">
-    <form class="ride-form" action="ride.php" method="post">
+    <form class="ride-form" action="ride.php" method="post" onkeyup="validateLocation()" onsubmit="return validateLocation()">
         <div class="topic">Book a Ride in Just Seconds!</div>
 
         <div class="login-row">
-            Pickup Location :
-            <input type="text" name="pickLoc" class="textfield" required>
+            Pickup Location : <span id="pickLoc-note"></span>
+            <input type="text" id="pickLoc" name="pickLoc" class="textfield" required>
         </div>
 
         <div class="login-row">
-            Drop-off Location :
-            <input type="text" name="dropLoc" class="textfield" required>
+            Drop-off Location : <span id="dropLoc-note"></span>
+            <input type="text" id="dropLoc" name="dropLoc" class="textfield" required>
         </div>
 
         <div class="login-row">
             Vehicle Options : <span id="vehicleOpt-note">Scroll down the page to see options and prices.</span>
             <select name="vehicleOpt" class="textfield" required>
                 <option value="">Select an option from the list</option>
-                <option value="">Tuk</option>
-                <option value="">Nano Car</option>
-                <option value="">Mini Car</option>
-                <option value="">Hybrid Car</option>
-                <option value="">Mini Van</option>
-                <option value="">Van Non A/C</option>
-                <option value="">Van A/C</option>
-                <option value="">Batta Lorry</option>
-                <option value="">Lorry</option>
+                <option value="tuk">Tuk</option>
+                <option value="nano-car">Nano Car</option>
+                <option value="mini-car">Mini Car</option>
+                <option value="hybrid-car">Hybrid Car</option>
+                <option value="mini-van">Mini Van</option>
+                <option value="van-non-ac">Van Non A/C</option>
+                <option value="van-ac">Van A/C</option>
+                <option value="batta-lorry">Batta Lorry</option>
+                <option value="lorry">Lorry</option>
             </select>
         </div>
 
@@ -80,7 +80,7 @@ else{
     </form>
 </div>
 
-<!---------------------------------------------------Javascript for prevent early date and times--------------------------------------------------->
+<!--------------------------------Javascript for ride booking--------------------------->
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         // Set minimum date to today
@@ -125,6 +125,36 @@ else{
             }
         });
     });
+</script>
+
+<script>
+    function validateLocation(){
+        var pickLoc = document.getElementById("pickLoc");
+        var dropLoc = document.getElementById("dropLoc");
+
+        var pickLoc_error = document.getElementById("pickLoc-note");
+        var dropLoc_error = document.getElementById("dropLoc-note");
+
+        // Initial Return value
+        SignPass = true;
+
+        /*----- Pick Location Validation------*/
+        pickLoc_error.innerHTML = "";// Clear Previous messaegs
+        if(pickLoc.value.match(/[!'@#$%^*?"{}|<>]/)){// Shouldn't contain special characters
+            SignPass = false;
+            pickLoc_error.innerHTML = "* Special characters are not allowed !";
+        }
+
+        /*----- Drop Location Validation------*/
+        dropLoc_error.innerHTML = "";// Clear Previous messaegs
+        if(dropLoc.value.match(/[!'@#$%^*?"{}|<>]/)){// Shouldn't contain special characters
+            SignPass = false;
+            dropLoc_error.innerHTML = "* Special characters are not allowed !";
+        }
+
+        // Returning value
+        return SignPass;
+    }
 </script>
 
 
@@ -255,12 +285,14 @@ else{
 
             $cus_name = $row['fname']." ".$row['lname'];
             $cus_tele = $row['tele'];
+
             $cus_pickLoc = $_POST['pickLoc'];
             $cus_dropLoc = $_POST['dropLoc'];
+            $cus_vehicle = $_POST['vehicleOpt'];
             $cus_pickTime = $_POST['pickTime'];
             $cus_pickDate = $_POST['pickDate'];
 
-            $sql = "INSERT INTO bookings(no, name, tele, pickLoc, dropLoc, time, date) VALUES ($cus_no, '$cus_name', '$cus_tele', '$cus_pickLoc', '$cus_dropLoc', '$cus_pickTime', '$cus_pickDate')";
+            $sql = "INSERT INTO bookings(no, name, tele, vehicle, pickLoc, dropLoc, time, date) VALUES ($cus_no, '$cus_name', '$cus_tele', '$cus_vehicle', '$cus_pickLoc', '$cus_dropLoc', '$cus_pickTime', '$cus_pickDate')";
 
             if(mysqli_query($conn, $sql)){
                 $msg = 'Your ride has been booked !';
@@ -272,7 +304,6 @@ else{
                 $msg = 'Error while booking the ride !';
                 echo "<script>
                         alert('$msg');
-                        window.location.href = 'ride.php';
                     </script>";
             }
         }

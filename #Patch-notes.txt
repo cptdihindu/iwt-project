@@ -1,5 +1,6 @@
 latest,
 
+> Ride enquiry validation working.
 > Ride enquiry working.
 > About page interface improved. 
 > Home page vehicles added.
@@ -27,4 +28,5 @@ Finished,
 
 Working on,
 
+> Customers can cancel rides.
 > Driver registration (optional)
