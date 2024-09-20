@@ -50,7 +50,14 @@
                             if($page == "ride")   
                                 echo "<li><a class='active' href='ride.php'>Ride</a></li>";
                             else
-                            echo "<li><a href='ride.php'>Ride</a></li>";
+                                echo "<li><a href='ride.php'>Ride</a></li>";
+                        }
+                    }
+                    if (empty($_SESSION['user_role']) || $_SESSION['user_role'] == 'driver') {
+                        if ($page == "driver") {
+                            echo "<li><a class='active' href='driver.php'>Driver</a></li>";
+                        } else {
+                            echo "<li><a href='driver.php'>Driver</a></li>";
                         }
                     }
                     /* Guests can access 'driver' page

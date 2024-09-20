@@ -13,6 +13,7 @@
         $address = $_POST['address'];
         $sign_email = $_POST['sign-email'];
         $sign_pass = $_POST['sign-pass'];
+        $role = $_GET['role'];
 
         $sql = "SELECT * FROM `$tb_name` WHERE `$tb_email` = '$sign_email'";
         $result = mysqli_query($conn, $sql);
@@ -30,7 +31,7 @@
             }
         }
 
-        $sql = "INSERT INTO $tb_name(`$tb_fname`, `$tb_lname`, `$tb_gender`, `$tb_tele`, `$tb_adrs`, `$tb_email`, `$tb_pass`, `$tb_role`)VAlUES('$fname', '$lname', '$gender', '$tele', '$address', '$sign_email', '$sign_pass', 'customer')";
+        $sql = "INSERT INTO $tb_name(`$tb_fname`, `$tb_lname`, `$tb_gender`, `$tb_tele`, `$tb_adrs`, `$tb_email`, `$tb_pass`, `$tb_role`)VAlUES('$fname', '$lname', '$gender', '$tele', '$address', '$sign_email', '$sign_pass', '$role')";
 
         if(mysqli_query($conn, $sql)){
             $message = 'User registered successfully! You can login now.';

@@ -118,7 +118,7 @@
 <!--------------------------------------------------------Sign in popup-------------------------------------------------------------------------------->
                 <div class="sign-in-popup" id="sign-in-popup">
 <!--Sign in form-->
-                <form id="c_sign_in_form" action="php/sign-in.php" method="post" onkeyup="validateSignIn()" onsubmit="return validateSignIn()">
+                <form id="c_sign_in_form" action="php/sign-in.php?role=customer" method="post" onkeyup="validateSignIn()" onsubmit="return validateSignIn()">
                     <h2 class="form-heading">Sign In</h2>
                     <button type="button" class="popup-close-btn" onclick="closeSignInPopup()">X</button>
 
@@ -177,7 +177,7 @@
                 </div>
             </div>
         </div>
-<!------------------------------------------------Javascript for password eye toggling-------------------------------------------------------------------------------->
+<!------------------------------------------------Javascript for password eye toggling------------------------------------------------------>
         <script>
             var loginEye = document.getElementById("login-eye");
             var signEye = document.getElementById("sign-eye");

@@ -18,7 +18,7 @@ if (isset($_SESSION['user_role'])) {
     if ($_SESSION['user_role'] != 'admin') {
         echo "<center><h2>Oops!</h2><br/><h2>You don't have access to this page!</h2></center>";
     } else {
-        echo "<h1 align='center'>Admin Page</h1>";
+        echo "<div class='topic'>All registered users</div>";
 
         $sql = "SELECT * FROM `$tb_name`";
         $result = mysqli_query($conn, $sql);
@@ -52,7 +52,8 @@ if (isset($_SESSION['user_role'])) {
 
                         <?php echo "<td><a href='php/update.php?no=" . $row['no'] . "&email=" . urlencode($row['email']) . "'><img class='admin-table-icon' src='icons/edit.png'></a></td>"; ?>
 
-                        <?php echo "<td><a href =php/delete.php?no='".$row['no']."'><img class='admin-table-icon' src = 'icons/delete.png'></a></td>" ?>
+                        <?php echo "<td><a href='php/delete.php?no=" . $row['no'] . "'><img class='admin-table-icon' src='icons/delete.png'></a></td>"; ?>
+
                     </tr>
                     <?php } ?>
                 </tbody>

@@ -13,22 +13,34 @@ require_once('../header.php');
 echo "<div class='nav-margin'></div>";
 
 if (isset($_SESSION['user_role'])) {
-    # Logged admins can access 'admin' page
-    if ($_SESSION['user_role'] != 'admin') {
-        echo "<center><h2>Oops!</h2><br/><h2>You don't have access to this page!</h2></center>";
-    } else {
-        echo "<h1 align='center'>Delete Page</h1>";
 
-        if(isset($_GET['no'])){
-            $sql = "DELETE FROM `$tb_name` WHERE `$tb_no` = ".$_GET['no'];
-            $result = mysqli_query($conn, $sql);
 
-            if(!$result){
-                echo "failed !";
+        if($_SESSION['user_role'] == 'admin'){
+            if(isset($_GET['no'])){
+                $sql = "DELETE FROM `" . $tb_name . "` WHERE `" . $tb_no . "` = " . $_GET['no'];
+                $result = mysqli_query($conn, $sql);
+    
+                if(!$result){
+                    echo "failed !";
+                }
+                header("Location: ../admin.php");
             }
-            header("Location: ../admin.php");
         }
-    } ?>
+        else if($_SESSION['user_role'] == 'driver'){
+            if(isset($_GET['no'])){
+                $sql = "DELETE FROM bookings WHERE no = ".$_GET['no'];
+                $result = mysqli_query($conn, $sql);
+    
+                if(!$result){
+                    echo "failed !";
+                }
+                header("Location: ../driver.php");
+            }
+        }
+        else{
+            echo "<center><h2>Oops!</h2><br/><h2>You don't have access to this page!</h2></center>";
+        }
+     ?>
 
         
 

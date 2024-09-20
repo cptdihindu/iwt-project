@@ -127,7 +127,8 @@ if (isset($_SESSION['user_role'])) {
                         <div class="update-form-row"><div>Role :</div>
                             <div class="radio-field">
                                 <input type='radio' name='role' value='admin' <?php if($row['role'] == 'admin') echo 'checked'?> required> Admin &nbsp;&nbsp;
-                                <input type='radio' name='role' value='customer' <?php if($row['role'] == 'customer') echo 'checked'?> required> Customer
+                                <input type='radio' name='role' value='customer' <?php if($row['role'] == 'customer') echo 'checked'?> required> Customer &nbsp;&nbsp;
+                                <input type='radio' name='role' value='driver' <?php if($row['role'] == 'driver') echo 'checked'?> required> Driver &nbsp;&nbsp;
                             </div>
                         </div>
                         <div class="update-form-row">

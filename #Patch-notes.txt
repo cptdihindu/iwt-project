@@ -1,5 +1,14 @@
 latest,
 
+> Driver registration working. They can register from driver Tab in the navbar.
+> Registered drivers can login to the website from the same default login.
+> Once cusomter booked a ride, that reservation will appear in the driver page.
+> Drivers can go to customer's pickup location, pick them and press "Picked" button.
+> Then that reservation will be cleared from the bookings table.
+
+
+Finished,
+
 > Customers cannot book another ride until the active ride cancels.
 > Customers can delete booked rides.
 > Ride enquiry validation working.
@@ -8,9 +17,6 @@ latest,
 > Home page vehicles added.
 > Password visibility toggling working in login, signin forms.
 > When an admin changed a user's email it checks that new email already exists in the database.
-
-Finished,
-
 > Sign in, Login, Logout system functioning properply.
 > Logout button on top right navbar.
 > Logout button only displays if the user logged in.
@@ -27,10 +33,6 @@ Finished,
 > Admins can delete database records.
 > Admins can edit database records.
 > Admins can create new admins through admin page.
-
-Working on,
-
-> Driver registration (optional)
 
 
 ----------------------------------------------------------------------------------------------------------

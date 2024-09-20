@@ -1,17 +1,17 @@
 <html>
 <head>
-    <title>NexRide Help</title>
+    <title>NexRide Features</title>
     <link rel="stylesheet" href="style.css">
 
     <style>
         .all-bodies{
-            padding: 0 50;
+            padding: 0 100;
         }
         .nav-margin{
             margin: 50;
         }
         .box{
-            width: 65%;
+            width: 70%;
             max-width: none;
         }
         .all-boxes{
@@ -21,6 +21,9 @@
         }
         .answer{
             color: rgb(200, 200, 200);
+        }
+        span{
+            color: red;
         }
     </style>
 
@@ -120,6 +123,59 @@ require_once('index.php');
     </div>
 
 
+    <!---------------------------------------Essential features---------------------------------------->
+    <div class="help-body">
+        <h1 align="center" >Essential Features</h1>
+        
+        <div class="all-boxes">
+            <div class="box">
+            <button type="button" class="expand-btn" onclick="expandBox(this)">╲╱</button>
+                <div class="question">
+                    Show/hide password
+                </div>
+                <div class="answer">
+                    <ul>
+                        <li>We have added a toggle eye icon to the password input fields in both the login and sign-in forms.</li><br>
+                        <li>You can use this feature to easily view or hide your password as needed.</li><br>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box">
+            <button type="button" class="expand-btn" onclick="expandBox(this)">╲╱</button>
+                <div class="question">
+                    Realtime validating
+                </div>
+                <div class="answer">
+                    <ul>
+                        <li>We have implemented JavaScript validation for the sign-in form, update form, and book-a-ride form to provide real-time feedback on input errors as users enter data.</li><br>
+                        <li>You will see a validation error message displayed next to the specific input field as soon as you enter invalid data. This provides immediate feedback, helping you correct any mistakes in real time.</li><br>
+                        <ul>
+                            <li>You will see <span>"Not a valid name"</span> message next to first name or last name as soon as you enter a special character to the field.</li><br>
+                        </ul>
+                        <li>This is achieved using the <b>onkeyup</b> event to trigger validation checks immediately.</li><br>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box">
+            <button type="button" class="expand-btn" onclick="expandBox(this)">╲╱</button>
+                <div class="question">
+                    E-mail checking
+                </div>
+                <div class="answer">
+                    <ul>
+                        <li>You cannot use an email that is already associated with another account in our database.</li><br>
+                        <li>If you attempt to register with such an email, you will see an alert message: "This email is already registered! Please log in to your account."</li><br>
+                        <li>This indicates that the email address is linked to an existing account, and you should proceed to log in instead.</li><br>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
     <!---------------------------------------Special features---------------------------------------->
     <div class="help-body">
         <h1 align="center" >Special Features</h1>
@@ -136,9 +192,10 @@ require_once('index.php');
 
                         <li>In each array there are various offers and promotions customized according to the user type. Ex :</li><br>
                         <ul>
-                        <li>First ride offers, fresh deals for guests.</li><br>
-                        <li>Other offers for logged users. <i>("Thank You for Being a Loyal User! Get 20% OFF your next ride booked this week!")</i></li><br>
+                            <li>First ride offers, fresh deals for guests.</li><br>
+                            <li>Other offers for logged users. <i>("Thank You for Being a Loyal User! Get 20% OFF your next ride booked this week!")</i></li><br>
                         </ul>
+                        <li>Each time a user enters the <b>Home page</b>, a random banner will appear as a marquee in the top of the page according to the user type.</li><br>
                     </ul>
                 </div>
             </div>
@@ -152,6 +209,19 @@ require_once('index.php');
                     <ul>
                         <li>Website greets the user with their first name as "Welcome, <i>Username !</i> 👋"</li><br>
                         <li>If the user is a guest, website greets them with "Welcome, Guest !"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="box">
+            <button type="button" class="expand-btn" onclick="expandBox(this)">╲╱</button>
+                <div class="question">
+                    Popup forms
+                </div>
+                <div class="answer">
+                    <ul>
+                        <li>Without going to a separate page for Login and Sign-in, We setup the Login and Sign-in forms to appear as a popup box in the homepage when the user clicked the particular button.</li><br>
+                        <li>You can easily close these popups by closing them from the top right close button in each window.</li><br>
                     </ul>
                 </div>
             </div>
@@ -185,8 +255,28 @@ require_once('index.php');
                     </ul>
                 </div>
             </div>
+
+            <div class="box">
+            <button type="button" class="expand-btn" onclick="expandBox(this)">╲╱</button>
+                <div class="question">
+                    Cool effects
+                </div>
+                <div class="answer">
+                    <ul>
+                        <li>Throughtout the website, the user can get a good experience with some cool CSS effects.</li><br>
+                        <li>When hovering items in "Our Services" and "Our Options", scale of the item will get increased.</li><br>
+                        <li>When hovering a row in Admin table, the selected row will be highlighted. Which make the admins to to their tasks easily when table gets more and more rows.</li><br>
+                    </ul>
+                </div>
+            </div>
+
+
         </div>
     </div>
+
+
+
+    
 </div>
 
 <?php require_once('footer.php');?>
