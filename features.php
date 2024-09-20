@@ -103,6 +103,24 @@ require_once('index.php');
                     </ul>
                 </div>
             </div>
+
+            <!-----------------------------------------------Drivers------------------------------------>
+            <div class="box">
+            <button type="button" class="expand-btn" onclick="expandBox(this)">╲╱</button>
+                <div class="question">
+                    Drivers
+                </div>
+                <div class="answer">
+                    <ul>
+                        <li>Drivers can easily register through the "Driver" tab located in the navigation bar.</li><br>
+                        <li>Once registered, drivers can log in to the website using the same login in the home page.</li><br>
+                        <li>When a customer books a ride, the reservation will be displayed on the driver's dashboard.</li><br>
+                        <li>Drivers can navigate to the customer's pickup location to pick them up.</li><br>
+                        <li>After picking up the customer, drivers can confirm the ride by pressing the "Picked" button.</li><br>
+                        <li>Upon confirmation, the reservation will be automatically removed from the bookings table.</li><br>
+                    </ul>
+                </div>
+            </div>
             <!--------------------------------------------------------Guest--------------------------------------->
             <div class="box">
             <button type="button" class="expand-btn" onclick="expandBox(this)">╲╱</button>
