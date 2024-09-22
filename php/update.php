@@ -52,7 +52,7 @@ if(isset($_POST['update-btn'])){
                 </script>";
             }
         }
-    # if old and new emaols are same
+    # if old and new emails are same
     }else{
         // Updating Data
         $sql = "UPDATE `$tb_name` SET `$tb_fname`='$up_fname', `$tb_lname`='$up_lname', `$tb_gender`='$up_gender', `$tb_tele`='$up_tele', `$tb_adrs`='$up_address', `$tb_email`='$up_email', `$tb_role`='$up_role' WHERE `$tb_no`='$up_no'";

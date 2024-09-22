@@ -33,50 +33,14 @@ else{
 ?>
 
 
-<div><!-----------------------------------------------PHP CODE TO VIEW ACTIVE BOOKINGS ------------------------------------------->
-    <?php
-
-    # Checking the customer has already booked
-    $cus_no = $_SESSION['user_no'];
-    $sql = "SELECT * FROM bookings WHERE no = $cus_no";
-    $result = mysqli_query($conn, $sql);
-    $row = mysqli_fetch_assoc($result);
-
-    if(mysqli_num_rows($result) > 0){ ?>
-        <div class="topic">Active Rides</div>
-        <div class="active-ride-table-holder">
-            <table class="active-ride-table">
-                <tbody>
-                    <tr>
-                        <td>Pickup Date</td>
-                        <td>Pickup Time</td>
-                        <td>Vehicle</td>
-                        <td>Pickup Location</td>
-                        <td>Drop Location</td>
-                        <td>Actions</td>
-                    </tr>
-
-                    <tr>
-                        <td><?php echo $row['date'] ?></td>
-                        <td><?php echo $row['time'] ?></td>
-                        <td><?php echo $row['vehicle'] ?></td>
-                        <td><?php echo $row['pickLoc'] ?></td>
-                        <td><?php echo $row['dropLoc'] ?></td>
-
-                        <?php echo "<td><a href ='ride-cancel.php?no=$cus_no'><img class='admin-table-icon' src = 'icons/delete.png'></a></td>" ?>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="content">You have an existing ride booked. Complete or cancel it to book again.</div>
-
-    <?php    
-    } else {
-    ?>
+<div id="ride-table-container"><!-----------------------------------------------PHP CODE TO VIEW ACTIVE BOOKINGS ------------------------------------------->
+    <!-- Initially, load the table here with PHP -->
+    <?php require_once('fetch-rides.php'); ?>
 </div>
 
 
-<!---------------------------------------------------ride booking form--------------------------------------------------->
+<!---------------------------------------------------Ride booking form--------------------------------------------------->
+<?php if (mysqli_num_rows($result) == 0) { ?>
 <div class="ride-form-holder">
     <form class="ride-form" action="ride.php" method="post" onkeyup="validateLocation()" onsubmit="return validateLocation()">
         <div class="topic">Book a Ride in Just Seconds!</div>
@@ -124,8 +88,8 @@ else{
         </div>
     </form>
 </div>
+<?php }?>
 
-<?php } ?>
 
 <!--------------------------------Javascript for ride booking--------------------------->
 <script>
@@ -339,7 +303,7 @@ else{
             $cus_pickTime = $_POST['pickTime'];
             $cus_pickDate = $_POST['pickDate'];
 
-            $sql = "INSERT INTO bookings(no, name, tele, vehicle, pickLoc, dropLoc, time, date) VALUES ($cus_no, '$cus_name', '$cus_tele', '$cus_vehicle', '$cus_pickLoc', '$cus_dropLoc', '$cus_pickTime', '$cus_pickDate')";
+            $sql = "INSERT INTO bookings(no, name, tele, vehicle, pickLoc, dropLoc, time, date, status) VALUES ($cus_no, '$cus_name', '$cus_tele', '$cus_vehicle', '$cus_pickLoc', '$cus_dropLoc', '$cus_pickTime', '$cus_pickDate', 'pending')";
 
             if(mysqli_query($conn, $sql)){
                 $msg = 'Your ride has been booked !';
@@ -360,16 +324,24 @@ else{
 
 
 
-
-
-
-
-
-
-
-
-
-
 <?php require_once('footer.php'); ?>
+<script>
+    function loadBookings() {
+        var xhr = new XMLHttpRequest();  // Create a new AJAX request
+        xhr.open('GET', 'fetch-rides.php', true);  // Request fetch-bookings.php
+
+        xhr.onload = function() {
+            if (xhr.status == 200) {
+                // Update the booking table with the new content
+                document.getElementById('ride-table-container').innerHTML = xhr.responseText;
+            }
+        };
+
+        xhr.send();  // Send the request
+    }
+
+    // Call loadBookings every 100 mili seconds to refresh the bookings table
+    setInterval(loadBookings, 1000);
+</script>
 </body>
 </html>

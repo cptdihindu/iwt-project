@@ -281,7 +281,7 @@ require_once('index.php');
                 </div>
                 <div class="answer">
                     <ul>
-                        <li>Throughtout the website, the user can get a good experience with some cool CSS effects.</li><br>
+                        <li>Throughout the website, the user can get a good experience with some cool CSS effects.</li><br>
                         <li>When hovering items in "Our Services" and "Our Options", scale of the item will get increased.</li><br>
                         <li>When hovering a row in Admin table, the selected row will be highlighted. Which make the admins to to their tasks easily when table gets more and more rows.</li><br>
                     </ul>

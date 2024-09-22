@@ -128,55 +128,20 @@ echo "<div class='nav-margin'></div>";
     }
 </script>
 
-<?php if(!empty($_SESSION['user_role']) && $_SESSION['user_role'] == 'driver') {?>
-<div style="min-height: 400px;">
-    <div class="topic">Ride Bookings</div>
+<?php if(!empty($_SESSION['user_role']) && $_SESSION['user_role'] == 'driver') { ?>
+    <div style="min-height: 400px;">
+        <div class="topic">Ride Bookings</div>
 
-    <?php
-    $sql = "SELECT * FROM bookings";
-    $result = mysqli_query($conn, $sql);
-
-    if($result && mysqli_num_rows($result) > 0){ ?>
-        <div style="padding-bottom:25" class="subtopic">Go to customer's Pick up location, pick the customer and click "Picked" button to start the ride.</div>
-        <table class="admin-table">
-            <tbody>
-                <tr>
-                    <td>Customer No</td>
-                    <td>Name</td>
-                    <td>Phone</td>
-                    <td>Vehicle</td>
-                    <td>Pickup Location</td>
-                    <td>Drop-off Location</td>
-                    <td>Time</td>
-                    <td>Date</td>
-                    <td>Actions</td>
-                </tr>
-
-                <?php while($row = mysqli_fetch_assoc($result)) {?>
-                    <tr>
-                        <td><?php echo $row['no']?></td>
-                        <td><?php echo $row['name']?></td>
-                        <td><?php echo $row['tele']?></td>
-                        <td><?php echo $row['vehicle']?></td>
-                        <td><?php echo $row['pickLoc']?></td>
-                        <td><?php echo $row['dropLoc']?></td>
-                        <td><?php echo $row['time']?></td>
-                        <td><?php echo $row['date']?></td>
-
-                        <td><a href='php/delete.php?no=<?php echo $row['no']; ?>'><button type="button" class="logout-btn">Picked</button></a></td>
-
-                    </tr>
-                    <?php } ?>
-            </tbody>
-        </table>
-    
-    <?php } else {?>
-    <div style="color: #888; padding-top:100;" class="topic">
-        No ride bookings available at this time.
+        
+        
+        <!-- This is the div that will be dynamically updated with the booking table -->
+        <div id="booking-table-container">
+            <!-- Initially, load the table here with PHP -->
+            <?php require_once('fetch-bookings.php'); ?>
+        </div>
     </div>
+<?php } ?>
 
-</div>
-<?php } }?>
 
 
 
@@ -186,5 +151,24 @@ echo "<div class='nav-margin'></div>";
 <?php require_once('footer.php'); ?>
 
 <script src="scripts/validate.js"></script>
+<script>
+    function loadRides() {
+        var xhr = new XMLHttpRequest();  // Create a new AJAX request
+        xhr.open('GET', 'fetch-bookings.php', true);  // Request fetch-bookings.php
+
+        xhr.onload = function() {
+            if (xhr.status == 200) {
+                // Update the booking table with the new content
+                document.getElementById('booking-table-container').innerHTML = xhr.responseText;
+            }
+        };
+
+        xhr.send();  // Send the request
+    }
+
+    // Call loadBookings every 100 mili seconds to refresh the bookings table
+    setInterval(loadRides, 1000);
+</script>
+
 </body>
 </html>
