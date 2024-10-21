@@ -45,11 +45,13 @@ echo "<div class='nav-margin'></div>";
                 <span id="fname-note"></span><!--JS Error note-->
                 <input type="text" id="fname" name="fname" class="textfield">
             </div>
+
             <div class="login-row">
                 Last Name
                 <span id="lname-note"></span><!--JS Error note-->
                 <input type="text" id="lname" name="lname" class="textfield">
             </div>
+
             <div class="login-row" style="display: flex;">
                 Gender :
                 <div class="radio-btns">
@@ -57,33 +59,61 @@ echo "<div class='nav-margin'></div>";
                     <div><input required class="radio" type="radio" name="gender" value="f">Female</div>
                 </div> 
             </div>
+
             <div class="login-row">
                 Phone
                 <span id="tele-note"></span><!--JS Error note-->
                 <input type="text" id="tele" name="tele" class="textfield">
             </div>
+
+            <div class="login-row">
+                Vehicle
+                <select name="vehicle" class="textfield" required>
+                    <option value="">Select the vehicle from the list</option>
+                    <option value="tuk">Tuk</option>
+                    <option value="nano-car">Nano Car</option>
+                    <option value="mini-car">Mini Car</option>
+                    <option value="hybrid-car">Hybrid Car</option>
+                    <option value="mini-van">Mini Van</option>
+                    <option value="van-non-ac">Van Non A/C</option>
+                    <option value="van-ac">Van A/C</option>
+                    <option value="batta-lorry">Batta Lorry</option>
+                    <option value="lorry">Lorry</option>
+                </select>
+            </div>
+
+            <div class="login-row">
+                Plate number
+                <span id="plate-note"></span><!--JS Error note-->
+                <input type="text" id="plate" name="plate" class="textfield" style="text-transform: uppercase;" placeholder="Eg : NC-9024, CAB-1234">
+            </div>
+
             <div class="login-row">
                 Address
                 <span id="address-note"></span><!--JS Error note-->
                 <input type="text" id="address" name="address" class="textfield">
             </div>
+
             <div class="login-row">
                 E-mail
                 <span id="sign-email-note"></span><!--JS Error note-->
                 <input type="text" id="sign-email" name="sign-email" class="textfield">
             </div>
+
             <div class="login-row" id="sign-password-row">
                 Create a Password
                 <span id="sign-pass-note"></span><!--JS Error note-->
                 <input type="password" id="sign-pass" name="sign-pass" class="textfield">
                 <img id="sign-eye" src="icons/eye-close.png">
             </div>
+
             <div class="login-row" id="sign-re-password-row">
                 Repeat Password
                 <span id="re-sign-pass-note"></span><!--JS Error note-->
                 <input type="password" id="re-sign-pass" name="re-sign-pass" class="textfield">
                 <img id="sign-re-eye" src="icons/eye-close.png">
             </div>
+
             <div class="login-row">
                 <input type="submit" name="sign-in-submit" value="Sign In" class="login-submit"><!--Sign-in submit button-->
             </div>

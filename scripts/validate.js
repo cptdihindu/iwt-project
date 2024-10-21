@@ -7,6 +7,7 @@ function validateSignIn(){
     var sign_email = document.getElementById("sign-email");
     var sign_pass = document.getElementById("sign-pass");
     var re_sign_pass = document.getElementById("re-sign-pass");
+    var plate = document.getElementById("plate");
 
     // Error msg boxes
     var fname_error = document.getElementById("fname-note");
@@ -16,6 +17,7 @@ function validateSignIn(){
     var sign_email_error = document.getElementById("sign-email-note");
     var sign_pass_error = document.getElementById("sign-pass-note");
     var re_sign_pass_error = document.getElementById("re-sign-pass-note");
+    var plate_error = document.getElementById("plate-note");
 
     // Initial Return value
     SignPass = true;
@@ -51,6 +53,17 @@ function validateSignIn(){
     else if(!tele.value.match(/^[0-9]{10}$/)){// Should contain only 10 numbers
         SignPass = false;
         tele_error.innerHTML = "* Not a valid Phone number !";
+    }
+
+    /*----- Plate number Validation------*/
+    plate_error.innerHTML = "";// Clear Previous messages
+    if(plate.value == ''){// Empty check
+        SignPass = false;
+        plate_error.innerHTML = "* Cannot be empty !";
+    }
+    else if (!plate.value.match(/^[A-Za-z]{2,3}-[0-9]{4}$|^[0-9]{2}-[0-9]{4}$/)) {
+        SignPass = false;
+        plate_error.innerHTML = "* Invalid plate format !"
     }
 
     /*----- Address Validation------*/

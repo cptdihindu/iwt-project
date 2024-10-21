@@ -18,6 +18,7 @@ if (isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'customer') {
                         <td>Pickup Date</td>
                         <td>Pickup Time</td>
                         <td>Vehicle</td>
+                        <?php if($row['status'] != 'pending') echo "<td>Plate No</td>"?>
                         <td>Pickup Location</td>
                         <td>Drop Location</td>
                         <td>Status</td>
@@ -28,6 +29,7 @@ if (isset($_SESSION['user_role']) && $_SESSION['user_role'] == 'customer') {
                         <td><?php echo $row['date'] ?></td>
                         <td><?php echo $row['time'] ?></td>
                         <td><?php echo $row['vehicle'] ?></td>
+                        <?php if($row['status'] != 'pending') echo "<td>".$row['plate']."</td>"?>
                         <td><?php echo $row['pickLoc'] ?></td>
                         <td><?php echo $row['dropLoc'] ?></td>
                         <td><?php echo $row['status'] ?></td>

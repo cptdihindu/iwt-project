@@ -9,6 +9,7 @@
 require_once('php/login.php');
 require_once('php/connect.php');
 $driver_no = $_SESSION['user_no'];
+$plate = $_SESSION['plate'];
 $cus_no = $_GET['no'];
 
 $sql = "SELECT status FROM bookings WHERE no = $cus_no";
@@ -20,7 +21,7 @@ if($result && mysqli_num_rows($result) > 0){
     
     if($status == 'pending'){
         $status = 'confirmed';
-        $sql = "UPDATE bookings SET driver_no = $driver_no WHERE no = $cus_no";
+        $sql = "UPDATE bookings SET driver_no = $driver_no, plate = '$plate' WHERE no = $cus_no";
         $result = mysqli_query($conn, $sql);
     }
     else if($status == 'confirmed')

@@ -1,4 +1,12 @@
 <html>
+    <head>
+        <style>
+            .logout-btn{
+                width: 100;
+                border-radius: 5px;
+            }
+        </style>
+    </head>
     <body>
     <div class="navbar">
             <dl>
@@ -53,6 +61,7 @@
                                 echo "<li><a href='ride.php'>Ride</a></li>";
                         }
                     }
+#--------------------------------------------------------To Driver Page ---------------------------------------
                     if (empty($_SESSION['user_role']) || $_SESSION['user_role'] == 'driver') {
                         if ($page == "driver") {
                             echo "<li><a class='active' href='driver.php'>Driver</a></li>";
@@ -60,12 +69,6 @@
                             echo "<li><a href='driver.php'>Driver</a></li>";
                         }
                     }
-                    /* Guests can access 'driver' page
-                    if(empty($_SESSION['user_role'])){
-                        echo "<li><a href=''>Driver</a></li>";
-                    }*/
-
-
 #--------------------------------------------------------To About Page ---------------------------------------
                     $link1 = "about.php";
                     $link2 = "../about.php";
@@ -122,10 +125,16 @@
                     }
                     # Logged users can logout
                     if(!empty($_SESSION['user_fname'])){
-                        echo "<li><a href='$final_link'>
+                        echo "<li><a class='nav-btn' href='$final_link'>
                                 <button class='logout-btn' type='button'>Logout</button>
                             </a></li>";
                     }
+                    /*# Logged users can logout
+                    if(!empty($_SESSION['user_fname'])){
+                        echo "<li><a class='nav-btn' href='$final_link'>
+                                <button class='logout-btn' type='button'>Logout</button>
+                            </a></li>";
+                    }*/
                 ?>
                 
             </dl>

@@ -2,6 +2,8 @@
 require_once('php/connect.php');
 require_once('php/login.php');
 $driver_no = $_SESSION['user_no'];
+$plate = $_SESSION['plate'];
+$vehicle = $_SESSION['vehicle'];
 
 # Checking the rides that this particular driver CONFIRMED.
 $sql = "SELECT * FROM bookings WHERE driver_no = $driver_no";
@@ -9,7 +11,7 @@ $result = mysqli_query($conn, $sql);
 
 # If there were no rides that this driver CONFIRMED, Then only they should see PENDING rides
 if(mysqli_num_rows($result) == 0){
-    $sql = "SELECT * FROM bookings WHERE driver_no = 0";
+    $sql = "SELECT * FROM bookings WHERE driver_no = 0 AND vehicle = '$vehicle'";
     $result = mysqli_query($conn, $sql);
 }
 

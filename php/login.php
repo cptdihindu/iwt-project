@@ -22,6 +22,8 @@ if(isset($_POST['login-submit'])){
             $_SESSION['user_fname'] = $userdata['fname']; // Getting fname
             $_SESSION['user_role'] = $userdata['role']; // Getting role
             $_SESSION['user_no'] = $userdata['no']; // Getting number
+            $_SESSION['plate'] = $userdata['plate']; // Getting plate
+            $_SESSION['vehicle'] = $userdata['vehicle']; // Getting vehicle
 
             // Redirect to index.php
             header("Location: ../index.php");
