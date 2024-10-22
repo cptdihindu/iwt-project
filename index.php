@@ -39,11 +39,13 @@
         <?php
             
             if(!empty($_SESSION['user_role']) && $_SESSION['user_role'] == 'driver'){ ?>
-                <div>
-                    <h2>My details</h2>
-                    <div>Full Name : <?php echo $_SESSION['user_fname']." ".$_SESSION['user_lname']; ?></div>
-                    <div>Vehicle : <?php echo $_SESSION['vehicle']; ?></div>
-                    <div>Plate : <?php echo $_SESSION['plate']; ?></div>
+                <div class="driver-wrapper">
+                    <div class="driver-details">
+                        <h2>My details</h2>
+                        <div><span>Full Name : </span><?php echo $_SESSION['user_fname']." ".$_SESSION['user_lname']; ?></div>
+                        <div><span>Vehicle : </span><?php echo $_SESSION['vehicle']; ?></div>
+                        <div><span>Plate : </span><?php echo $_SESSION['plate']; ?></div>
+                    </div>
                 </div>
       <?php }
 

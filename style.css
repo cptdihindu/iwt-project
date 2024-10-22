@@ -123,6 +123,29 @@ body{
 }
 
 
+.driver-wrapper{
+    margin-top: 50;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.driver-details{
+    background-color: black;
+    font-size: 23px;
+    padding: 20px 50px;
+    border: 2px solid orange;
+    border-radius: 10px;
+    box-shadow:3px 3px 15px 10px rgba(0, 0, 0, 0.367);
+}
+.driver-details h2{
+    margin: 8px;
+    text-align: center;
+}
+.driver-details div span{
+    color: rgb(188, 188, 188);
+}
+
+
 
 .wrapper{
     margin-top: 80;
