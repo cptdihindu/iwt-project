@@ -37,15 +37,26 @@
 
 <!--------------------------------------------------------------Dynamic banners-------------------------------------------------------------------------------->
         <?php
-            # banner for logged users
-            if(!empty($_SESSION['user_fname'])){
+            
+            if(!empty($_SESSION['user_role']) && $_SESSION['user_role'] == 'driver'){ ?>
+                <div>
+                    <h2>My details</h2>
+                    <div>Full Name : <?php echo $_SESSION['user_fname']." ".$_SESSION['user_lname']; ?></div>
+                    <div>Vehicle : <?php echo $_SESSION['vehicle']; ?></div>
+                    <div>Plate : <?php echo $_SESSION['plate']; ?></div>
+                </div>
+      <?php }
+
+            # banner for logged customers
+            else if(!empty($_SESSION['user_fname'])){
                 $randKey = array_rand($userBanners);
                 echo "<marquee class='user-banner'>
                         $userBanners[$randKey]
                      </marquee>";
-            
+            }
+
             # banner for guest users
-            }else{
+            else{
                 $randKey = array_rand($guestBanners);
                 echo "<marquee class='guest-banner'>
                         $guestBanners[$randKey]
@@ -118,7 +129,7 @@
 <!--------------------------------------------------------Sign in popup-------------------------------------------------------------------------------->
                 <div class="sign-in-popup" id="sign-in-popup">
 <!--Sign in form-->
-                <form id="c_sign_in_form" action="php/sign-in.php?role=customer" method="post" onkeyup="validateSignIn()" onsubmit="return validateSignIn()">
+                <form id="c_sign_in_form" action="php/sign-in.php?role=customer" method="post" onkeyup="validateUserSignIn()" onsubmit="return validateUserSignIn()">
                     <h2 class="form-heading">Sign In</h2>
                     <button type="button" class="popup-close-btn" onclick="closeSignInPopup()">X</button>
 

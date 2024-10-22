@@ -27,36 +27,39 @@
         echo "Plate: $plate<br>";
         echo "Sign Password: $sign_pass<br>";
         echo "Role: $role<br>";
+        
+        if($role = 'customer'){
+            $sql = "SELECT * FROM `$tb_name` WHERE `$tb_email` = '$sign_email'";
+            $result = mysqli_query($conn, $sql);
 
-        $sql = "SELECT * FROM `$tb_name` WHERE `$tb_email` = '$sign_email'";
-        $result = mysqli_query($conn, $sql);
-
-        if($result){
-            if(mysqli_num_rows($result) > 0){
-                // E-mail already found
-                $message = "This email is already registered ! Please log in to your account.";
-                echo
-                "<script>
-                    alert('$message');
-                    window.history.back();
-                </script>";
-                die();   //stops the process
+            if($result){
+                if(mysqli_num_rows($result) > 0){
+                    // E-mail already found
+                    $message = "This email is already registered ! Please log in to your account.";
+                    echo
+                    "<script>
+                        alert('$message');
+                        window.history.back();
+                    </script>";
+                    die();   //stops the process
+                }
             }
         }
+        else if($role = 'driver'){
+            $sql = "SELECT * FROM `$tb_name` WHERE `$tb_plate` = '$plate'";
+            $result = mysqli_query($conn, $sql);
 
-        $sql = "SELECT * FROM `$tb_name` WHERE `$tb_plate` = '$plate'";
-        $result = mysqli_query($conn, $sql);
-
-        if($result){
-            if(mysqli_num_rows($result) > 0){
-                // Plate already found
-                $message = "The number plate $plate is already registered ! Log in to your account or use a different vehicle.";
-                echo
-                "<script>
-                    alert('$message');
-                    window.history.back();
-                </script>";
-                die();   //stops the process
+            if($result){
+                if(mysqli_num_rows($result) > 0){
+                    // Plate already found
+                    $message = "The number plate $plate is already registered ! Log in to your account or use a different vehicle.";
+                    echo
+                    "<script>
+                        alert('$message');
+                        window.history.back();
+                    </script>";
+                    die();   //stops the process
+                }
             }
         }
 

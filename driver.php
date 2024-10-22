@@ -196,7 +196,7 @@ echo "<div class='nav-margin'></div>";
         xhr.send();  // Send the request
     }
 
-    // Call loadBookings every 100 mili seconds to refresh the bookings table
+    // Call loadBookings every 1000 mili seconds to refresh the bookings table
     setInterval(loadRides, 1000);
 </script>
 

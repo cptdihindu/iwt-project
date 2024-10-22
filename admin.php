@@ -33,6 +33,8 @@ if (isset($_SESSION['user_role'])) {
                         <td>Last Name</td>
                         <td>Gender</td>
                         <td>Phone</td>
+                        <td>Vehicle</td>
+                        <td>Plate</td>
                         <td>Address</td>
                         <td>E-mail 🔑</td>
                         <td>Role</td>
@@ -46,6 +48,8 @@ if (isset($_SESSION['user_role'])) {
                         <td><?php echo $row['lname']?></td>
                         <td><?php echo $row['gender']?></td>
                         <td><?php echo $row['tele']?></td>
+                        <td><?php echo $row['vehicle']?></td>
+                        <td><?php echo $row['plate']?></td>
                         <td><?php echo $row['address']?></td>
                         <td><?php echo $row['email']?></td>
                         <td><?php echo $row['role']?></td>

@@ -20,6 +20,7 @@ if(isset($_POST['login-submit'])){
     
             // Store user information in session variables
             $_SESSION['user_fname'] = $userdata['fname']; // Getting fname
+            $_SESSION['user_lname'] = $userdata['lname']; // Getting fname
             $_SESSION['user_role'] = $userdata['role']; // Getting role
             $_SESSION['user_no'] = $userdata['no']; // Getting number
             $_SESSION['plate'] = $userdata['plate']; // Getting plate

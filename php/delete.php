@@ -14,6 +14,7 @@ echo "<div class='nav-margin'></div>";
 
 if (isset($_SESSION['user_role'])) {
 
+#---------------------------------------------Admins can delete any record from the admin table ---------------------------------------
 
         if($_SESSION['user_role'] == 'admin'){
             if(isset($_GET['no'])){
@@ -26,6 +27,7 @@ if (isset($_SESSION['user_role'])) {
                 header("Location: ../admin.php");
             }
         }
+#---------------------------------------------------------------------------------------------------------------------------------------------
         else if($_SESSION['user_role'] == 'driver'){
             if(isset($_GET['no'])){
                 $sql = "DELETE FROM bookings WHERE no = ".$_GET['no'];
