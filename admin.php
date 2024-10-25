@@ -28,7 +28,7 @@ if (isset($_SESSION['user_role'])) {
             <table class="admin-table">
                 <tbody>
                     <tr>
-                        <td>No</td>
+                        <td>No 🔑</td>
                         <td>First Name</td>
                         <td>Last Name</td>
                         <td>Gender</td>
@@ -36,7 +36,7 @@ if (isset($_SESSION['user_role'])) {
                         <td>Vehicle</td>
                         <td>Plate</td>
                         <td>Address</td>
-                        <td>E-mail 🔑</td>
+                        <td>E-mail</td>
                         <td>Role</td>
                         <td colspan="2">Modify</td>
                     </tr>
